@@ -2,7 +2,7 @@
 <html lang="tr" class="dark scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Chako Home Store | Premium Ev & Ambiyans Teknolojileri</title>
     <meta name="description" content="Evinizin havasını ve atmosferini değiştiren yenilikçi, şık ve akıllı dekorasyon ürünleri. Aynı gün kargo imkanıyla!">
     
@@ -53,9 +53,6 @@
             background: rgba(3, 7, 18, 0.85);
             backdrop-filter: blur(16px);
         }
-        .glow-orange {
-            box-shadow: 0 0 30px -5px rgba(249, 115, 22, 0.3);
-        }
     </style>
 </head>
 <body class="bg-gray-950 text-slate-100 min-h-screen flex flex-col selection:bg-orange-500 selection:text-white pb-24 md:pb-10">
@@ -68,14 +65,28 @@
     <!-- Header / Navbar -->
     <header class="sticky top-0 z-40 glass-nav border-b border-gray-800/80">
         <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-            <!-- Brand Logo -->
+            
+            <!-- Brand Logo (Modern SVG Vector Logo) -->
             <a href="#" class="flex items-center space-x-3 group">
-                <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-orange-600 to-amber-500 flex items-center justify-center shadow-lg shadow-orange-500/20 group-hover:scale-105 transition-transform">
-                    <i class="fa-solid fa-house-laptop text-white text-lg"></i>
+                <div class="relative w-11 h-11 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-orange-600 via-amber-500 to-yellow-400 rounded-2xl blur-md opacity-70 group-hover:opacity-100 transition-opacity"></div>
+                    <div class="relative w-11 h-11 bg-slate-950 border border-orange-500/30 rounded-2xl flex items-center justify-center shadow-2xl overflow-hidden group-hover:scale-105 transition-transform duration-300">
+                        <!-- Custom SVG Emblem -->
+                        <svg class="w-7 h-7 text-orange-500" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 10V21C2 21.5523 2.44772 22 3 22H21C21.5523 22 22 21.5523 22 21V10L12 2Z" fill="url(#logo-grad)" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 11C10.5 13 10 14.5 10 16C10 17.5 11 18.5 12 18.5C13 18.5 14 17.5 14 16C14 14.5 13.5 13 12 11Z" fill="#FFF" opacity="0.9"/>
+                            <defs>
+                                <linearGradient id="logo-grad" x1="2" y1="2" x2="22" y2="22" gradientUnits="userSpaceOnUse">
+                                    <stop stop-color="#ea580c"/>
+                                    <stop offset="1" stop-color="#f59e0b"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
                 </div>
                 <div>
-                    <span class="text-lg font-extrabold tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent block leading-tight">Chako Home</span>
-                    <span class="text-[10px] text-orange-400 uppercase tracking-widest font-bold block">Store & Living</span>
+                    <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-white via-orange-100 to-amber-300 bg-clip-text text-transparent block leading-tight">Chako Home</span>
+                    <span class="text-[10px] text-orange-400 uppercase tracking-widest font-extrabold block">Store & Living</span>
                 </div>
             </a>
 
