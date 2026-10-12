@@ -135,11 +135,11 @@
         <!-- Product Cards Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
-            <!-- ÜRÜN 1: Alevli Difüzör -->
+            <!-- ÜRÜN 1: Alevli Difüzör (Yeni Gerçek Cihaz Görseli) -->
             <div class="product-item aroma glass-card rounded-3xl p-4 flex flex-col justify-between hover:border-orange-500/40 transition-all duration-300 group hover:-translate-y-1">
                 <div class="space-y-3">
-                    <div class="relative aspect-square rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 cursor-zoom-in" onclick="openLightbox('https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=1200&q=80', 'Volkanik Alev Aromalı Difüzör')">
-                        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=600&q=80" alt="Volkanik Alev Aromalı Difüzör" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="relative aspect-square rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 cursor-zoom-in" onclick="openLightbox('https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=1200&q=80', 'Volkanik Alev Aromalı Difüzör')">
+                        <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=600&q=80" alt="Volkanik Alev Aromalı Difüzör" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <span class="absolute top-2.5 left-2.5 bg-orange-500 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow pointer-events-none">ÇOK SATAN</span>
                         <span class="absolute top-2.5 right-2.5 bg-emerald-500/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-md backdrop-blur-sm pointer-events-none">Ücretsiz Kargo</span>
                         <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
@@ -394,7 +394,7 @@
             totalEl.innerText = totalPrice + ' TL';
         }
 
-        function toggleCartModal(forceOpen = false)  {
+        function toggleCartModal(forceOpen = false) {
             const modal = document.getElementById('cart-modal');
             if(forceOpen || modal.classList.contains('opacity-0')) {
                 modal.classList.remove('opacity-0', 'pointer-events-none');
