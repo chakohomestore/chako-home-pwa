@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Chako Home Store | Premium Ev & Ambiyans Teknolojileri</title>
-    <meta name="description" content="Evinizin havasını ve atmosferini değiştiren yenilikçi, şık ve akıllı dekorasyon ürünleri. Aynı gün kargo imkanıyla!">
+    <meta name="description" content="Evinizin havasını ve atmosferini değiştiren yenilikçi, şık ve akıllı dekorasyon ürünleri.">
     
     <!-- PWA Manifest & Web App Capable -->
     <link rel="manifest" href="data:application/manifest+json,{
@@ -59,7 +59,7 @@
 
     <!-- Top Announcement Bar -->
     <div class="bg-gradient-to-r from-orange-600 via-amber-600 to-orange-600 text-white text-xs font-bold py-2 px-4 text-center tracking-wide shadow-md">
-        ✨ YENİ SEZON KOLEKSİYONU • TÜM SİPARİŞLERDE ÜCRETSİZ HIZLI KARGO 🔥
+        ✨ CHAKO HOME STORE • YAKINDA YENİ ÜRÜNLERLE YAYINDAYIZ 🔥
     </div>
 
     <!-- Header / Navbar -->
@@ -92,331 +92,52 @@
 
             <!-- Right Actions -->
             <div class="flex items-center space-x-3">
-                <a href="https://wa.me/905324554972?text=Merhaba,%20Chako%20Home%20Store%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="hidden sm:flex items-center space-x-2 bg-emerald-600/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-600 hover:text-white px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all">
+                <a href="https://wa.me/905324554972?text=Merhaba,%20Chako%20Home%20Store%20ürünleri%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" class="flex items-center space-x-2 bg-emerald-600/20 border border-emerald-500/30 text-emerald-400 hover:bg-emerald-600 hover:text-white px-3.5 py-1.5 rounded-full text-xs font-semibold transition-all">
                     <i class="fa-brands fa-whatsapp text-sm"></i>
                     <span>WhatsApp Destek</span>
                 </a>
-                
-                <!-- Cart Button Trigger -->
-                <button onclick="toggleCartModal()" class="relative bg-slate-900 border border-slate-700/80 hover:border-orange-500/50 p-2.5 rounded-2xl transition-all">
-                    <i class="fa-solid fa-bag-shopping text-orange-400 text-lg"></i>
-                    <span id="cart-badge" class="absolute -top-1.5 -right-1.5 bg-orange-500 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-gray-950 hidden">0</span>
-                </button>
             </div>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="relative overflow-hidden pt-8 pb-6 px-4">
+    <section class="relative overflow-hidden pt-12 pb-8 px-4">
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="max-w-6xl mx-auto text-center space-y-3 relative z-10">
-            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-orange-500/10 text-orange-400 border border-orange-500/20">
-                <i class="fa-solid fa-sparkles text-[10px]"></i> Premium Yaşam ve Ambiyans Koleksiyonu
+        <div class="max-w-4xl mx-auto text-center space-y-4 relative z-10">
+            <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-orange-500/10 text-orange-400 border border-orange-500/20">
+                <i class="fa-solid fa-store text-[10px]"></i> Altyapı Hazırlık Aşamasında
             </span>
             <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white max-w-2xl mx-auto leading-tight">
-                Evinizin Atmosferini <span class="bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent">Yeniden Keşfedin</span>
+                Mağazamız <span class="bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent">Çok Yakında</span> Sizlerle
             </h1>
             <p class="text-slate-400 text-xs sm:text-sm max-w-lg mx-auto leading-relaxed">
-                Işık, koku ve estetiği buluşturan akıllı ev aksesuarlarıyla yaşam alanınıza benzersiz bir dokunuş katın.
+                Gerçek ürünlerimiz, tedarikçi entegrasyonlarımız ve özel koleksiyonumuz ile çok yakında burada olacağız.
             </p>
         </div>
     </section>
 
-    <!-- Main Products Grid Container -->
-    <main class="max-w-6xl mx-auto px-4 py-4 flex-1 space-y-6">
-
-        <!-- Category Filters -->
-        <div class="flex items-center justify-center space-x-2 overflow-x-auto pb-2 scrollbar-none">
-            <button onclick="filterCategory('all', this)" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-orange-500 text-white shadow-lg shadow-orange-500/20 whitespace-nowrap">Tüm Ürünler</button>
-            <button onclick="filterCategory('aroma', this)" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 whitespace-nowrap">Aroma & Difüzör</button>
-            <button onclick="filterCategory('aydinlatma', this)" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 whitespace-nowrap">Ambiyans Aydınlatma</button>
+    <!-- Empty State Container -->
+    <main class="max-w-4xl mx-auto px-4 py-8 flex-1 flex items-center justify-center">
+        <div class="glass-card rounded-3xl p-8 sm:p-12 text-center max-w-md w-full space-y-4 border border-slate-800">
+            <div class="w-16 h-16 bg-orange-500/10 text-orange-500 rounded-2xl mx-auto flex items-center justify-center text-2xl border border-orange-500/20">
+                <i class="fa-solid fa-box-open"></i>
+            </div>
+            <h3 class="text-lg font-bold text-white">Henüz Ürün Eklenmedi</h3>
+            <p class="text-xs text-slate-400 leading-relaxed">
+                Tedarik edeceğiniz ve satışa sunacağınız gerçek ürünleri belirledikten sonra buraya tek tek ekleyebiliriz.
+            </p>
+            <a href="https://wa.me/905324554972?text=Merhaba,%20ürün%20ekleme%20süreci%20hakkında%20görüşelim." target="_blank" class="inline-flex items-center justify-center space-x-2 bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold px-5 py-3 rounded-xl transition-all shadow-lg shadow-orange-500/20 w-full">
+                <i class="fa-brands fa-whatsapp text-sm"></i>
+                <span>Tedarik Sürecini Görüş</span>
+            </a>
         </div>
-
-        <!-- Product Cards Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-            <!-- ÜRÜN 1: Alevli Difüzör (Yeni Gerçek Cihaz Görseli) -->
-            <div class="product-item aroma glass-card rounded-3xl p-4 flex flex-col justify-between hover:border-orange-500/40 transition-all duration-300 group hover:-translate-y-1">
-                <div class="space-y-3">
-                    <div class="relative aspect-square rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 cursor-zoom-in" onclick="openLightbox('https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=1200&q=80', 'Volkanik Alev Aromalı Difüzör')">
-                        <img src="https://images.unsplash.com/photo-1547887537-6158d64c35b3?auto=format&fit=crop&w=600&q=80" alt="Volkanik Alev Aromalı Difüzör" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <span class="absolute top-2.5 left-2.5 bg-orange-500 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow pointer-events-none">ÇOK SATAN</span>
-                        <span class="absolute top-2.5 right-2.5 bg-emerald-500/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-md backdrop-blur-sm pointer-events-none">Ücretsiz Kargo</span>
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
-                            <span class="bg-black/60 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-md flex items-center gap-1.5"><i class="fa-solid fa-magnifying-glass-plus"></i> Büyüt</span>
-                        </div>
-                    </div>
-                    <div>
-                        <span class="text-[10px] font-bold text-orange-400 uppercase tracking-wider">Aromaterapi</span>
-                        <h3 class="font-bold text-sm text-white mt-0.5 line-clamp-1">Volkanik Alev Aromalı Difüzör</h3>
-                        <p class="text-xs text-slate-400 mt-1 line-clamp-2">Gerçekçi alev efekti ve uçucu yağ nemlendirme teknolojisi.</p>
-                    </div>
-                </div>
-                <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between">
-                    <div>
-                        <span class="text-xs text-slate-500 line-through block">1.398 TL</span>
-                        <span class="text-lg font-black text-white">699 <span class="text-xs font-normal text-slate-400">TL</span></span>
-                    </div>
-                    <button onclick="addToCart('Volkanik Alev Difüzör', 699, 'Volkanik Alev')" class="bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold px-3.5 py-2.5 rounded-xl transition-all shadow-md flex items-center space-x-1.5 active:scale-95">
-                        <i class="fa-solid fa-cart-plus"></i>
-                        <span>Ekle</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- ÜRÜN 2: Levitasyon Ay Lambası -->
-            <div class="product-item aydinlatma glass-card rounded-3xl p-4 flex flex-col justify-between hover:border-orange-500/40 transition-all duration-300 group hover:-translate-y-1">
-                <div class="space-y-3">
-                    <div class="relative aspect-square rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 cursor-zoom-in" onclick="openLightbox('https://images.unsplash.com/photo-1532693322450-2cb5c511067d?auto=format&fit=crop&w=1200&q=80', 'Yüzen Levitasyonlu Ay Lambası')">
-                        <img src="https://images.unsplash.com/photo-1532693322450-2cb5c511067d?auto=format&fit=crop&w=600&q=80" alt="Yüzen Levitasyonlu Ay Lambası" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <span class="absolute top-2.5 left-2.5 bg-amber-500 text-slate-950 text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow pointer-events-none">PREMIUM</span>
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
-                            <span class="bg-black/60 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-md flex items-center gap-1.5"><i class="fa-solid fa-magnifying-glass-plus"></i> Büyüt</span>
-                        </div>
-                    </div>
-                    <div>
-                        <span class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">Aydınlatma</span>
-                        <h3 class="font-bold text-sm text-white mt-0.5 line-clamp-1">Yüzen Levitasyonlu Ay Lambası</h3>
-                        <p class="text-xs text-slate-400 mt-1 line-clamp-2">Havada süzülen ve kendi etrafında dönen manyetik 3D ay küresi.</p>
-                    </div>
-                </div>
-                <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between">
-                    <div>
-                        <span class="text-xs text-slate-500 line-through block">2.100 TL</span>
-                        <span class="text-lg font-black text-white">1.299 <span class="text-xs font-normal text-slate-400">TL</span></span>
-                    </div>
-                    <button onclick="addToCart('Yüzen Levitasyonlu Ay Lambası', 1299, 'Levitasyon Ay')" class="bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold px-3.5 py-2.5 rounded-xl transition-all shadow-md flex items-center space-x-1.5 active:scale-95">
-                        <i class="fa-solid fa-cart-plus"></i>
-                        <span>Ekle</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- ÜRÜN 3: RGB Ritim Lambası -->
-            <div class="product-item aydinlatma glass-card rounded-3xl p-4 flex flex-col justify-between hover:border-orange-500/40 transition-all duration-300 group hover:-translate-y-1">
-                <div class="space-y-3">
-                    <div class="relative aspect-square rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 cursor-zoom-in" onclick="openLightbox('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=1200&q=80', 'Akıllı RGB Müzik Ritim Lambası')">
-                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" alt="Akıllı RGB Müzik Ritim Lambası" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <span class="absolute top-2.5 left-2.5 bg-cyan-500 text-slate-950 text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow pointer-events-none">TREND</span>
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
-                            <span class="bg-black/60 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-md flex items-center gap-1.5"><i class="fa-solid fa-magnifying-glass-plus"></i> Büyüt</span>
-                        </div>
-                    </div>
-                    <div>
-                        <span class="text-[10px] font-bold text-cyan-400 uppercase tracking-wider">Akıllı Işık</span>
-                        <h3 class="font-bold text-sm text-white mt-0.5 line-clamp-1">Akıllı RGB Müzik Ritim Lambası</h3>
-                        <p class="text-xs text-slate-400 mt-1 line-clamp-2">Sese ve müziğe duyarlı 32 renkli LED şerit masa lambası.</p>
-                    </div>
-                </div>
-                <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between">
-                    <div>
-                        <span class="text-xs text-slate-500 line-through block">899 TL</span>
-                        <span class="text-lg font-black text-white">499 <span class="text-xs font-normal text-slate-400">TL</span></span>
-                    </div>
-                    <button onclick="addToCart('Akıllı RGB Müzik Ritim Lambası', 499, 'RGB Ritim')" class="bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold px-3.5 py-2.5 rounded-xl transition-all shadow-md flex items-center space-x-1.5 active:scale-95">
-                        <i class="fa-solid fa-cart-plus"></i>
-                        <span>Ekle</span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- ÜRÜN 4: Kristal Galaksi Küre -->
-            <div class="product-item aydinlatma glass-card rounded-3xl p-4 flex flex-col justify-between hover:border-orange-500/40 transition-all duration-300 group hover:-translate-y-1">
-                <div class="space-y-3">
-                    <div class="relative aspect-square rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 cursor-zoom-in" onclick="openLightbox('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80', '3D Kristal Galaksi Küresi')">
-                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="3D Kristal Galaksi Küresi" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
-                        <span class="absolute top-2.5 left-2.5 bg-purple-500 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow pointer-events-none">HEDİYELİK</span>
-                        <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center pointer-events-none">
-                            <span class="bg-black/60 text-white text-xs px-3 py-1.5 rounded-full backdrop-blur-md flex items-center gap-1.5"><i class="fa-solid fa-magnifying-glass-plus"></i> Büyüt</span>
-                        </div>
-                    </div>
-                    <div>
-                        <span class="text-[10px] font-bold text-purple-400 uppercase tracking-wider">Gece Lambası</span>
-                        <h3 class="font-bold text-sm text-white mt-0.5 line-clamp-1">3D Kristal Galaksi Küresi</h3>
-                        <p class="text-xs text-slate-400 mt-1 line-clamp-2">Ahşap LED tabanlı lazer işlemeli cam gezegen gece lambası.</p>
-                    </div>
-                </div>
-                <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between">
-                    <div>
-                        <span class="text-xs text-slate-500 line-through block">650 TL</span>
-                        <span class="text-lg font-black text-white">349 <span class="text-xs font-normal text-slate-400">TL</span></span>
-                    </div>
-                    <button onclick="addToCart('3D Kristal Galaksi Küresi', 349, 'Kristal Küre')" class="bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold px-3.5 py-2.5 rounded-xl transition-all shadow-md flex items-center space-x-1.5 active:scale-95">
-                        <i class="fa-solid fa-cart-plus"></i>
-                        <span>Ekle</span>
-                    </button>
-                </div>
-            </div>
-
-        </div>
-
     </main>
-
-    <!-- Lightbox Image Zoom Modal -->
-    <div id="lightbox-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/90 backdrop-blur-md opacity-0 pointer-events-none transition-opacity duration-300 p-4" onclick="closeLightbox()">
-        <div class="relative max-w-3xl w-full bg-slate-900 border border-slate-800 rounded-3xl p-4 shadow-2xl" onclick="event.stopPropagation()">
-            <div class="flex items-center justify-between pb-3 mb-2 border-b border-slate-800">
-                <h3 id="lightbox-title" class="text-sm font-bold text-white">Ürün Görseli</h3>
-                <button onclick="closeLightbox()" class="text-slate-400 hover:text-white p-2 text-lg">
-                    <i class="fa-solid fa-xmark"></i>
-                </button>
-            </div>
-            <div class="aspect-video sm:aspect-[16/10] rounded-2xl overflow-hidden bg-slate-950 flex items-center justify-center">
-                <img id="lightbox-img" src="" alt="Büyük Ürün Görseli" class="w-full h-full object-contain">
-            </div>
-        </div>
-    </div>
-
-    <!-- Cart Slide-Over Modal -->
-    <div id="cart-modal" class="fixed inset-0 z-50 flex justify-end bg-slate-950/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300">
-        <div class="w-full max-w-md bg-slate-900 border-l border-slate-800 h-full p-6 flex flex-col justify-between shadow-2xl">
-            <!-- Modal Header -->
-            <div class="space-y-4">
-                <div class="flex items-center justify-between border-b border-slate-800 pb-4">
-                    <div class="flex items-center space-x-2">
-                        <i class="fa-solid fa-bag-shopping text-orange-500 text-xl"></i>
-                        <h2 class="text-lg font-bold text-white">Sipariş Sepetim</h2>
-                    </div>
-                    <button onclick="toggleCartModal()" class="text-slate-400 hover:text-white p-2">
-                        <i class="fa-solid fa-xmark text-xl"></i>
-                    </button>
-                </div>
-
-                <!-- Items List -->
-                <div id="cart-items" class="space-y-3 max-h-[50vh] overflow-y-auto pr-1">
-                    <p class="text-slate-500 text-xs text-center py-8">Sepetiniz şu an boş.</p>
-                </div>
-            </div>
-
-            <!-- Modal Footer / Order Action -->
-            <div class="border-t border-slate-800 pt-4 space-y-4">
-                <div class="flex items-center justify-between text-sm">
-                    <span class="text-slate-400">Toplam Tutar:</span>
-                    <span id="cart-total" class="text-xl font-black text-orange-500">0 TL</span>
-                </div>
-                
-                <button onclick="sendWhatsAppOrder()" class="w-full bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg shadow-emerald-600/20 flex items-center justify-center space-x-2 transition-all">
-                    <i class="fa-brands fa-whatsapp text-xl"></i>
-                    <span>WhatsApp İle Siparişi Tamamla</span>
-                </button>
-                <p class="text-[10px] text-slate-500 text-center">Ödemelerinizi kapıda veya havale ile güvenle yapabilirsiniz.</p>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="border-t border-slate-900 bg-slate-950 py-8 text-center text-xs text-slate-500 space-y-2">
         <p>&copy; 2026 Chako Home Store. Tüm Hakları Saklıdır.</p>
-        <p class="text-[10px] text-slate-600">PWA Teknolojisi • Bağımsız Yapay Zeka Destekli Otomasyon</p>
+        <p class="text-[10px] text-slate-600">PWA Teknolojisi • Bağımsız Altyapı</p>
     </footer>
 
-    <!-- Interactive JavaScript Logic -->
-    <script>
-        let cart = [];
-
-        function openLightbox(imgSrc, title) {
-            const modal = document.getElementById('lightbox-modal');
-            const img = document.getElementById('lightbox-img');
-            const titleEl = document.getElementById('lightbox-title');
-
-            img.src = imgSrc;
-            titleEl.innerText = title;
-            modal.classList.remove('opacity-0', 'pointer-events-none');
-        }
-
-        function closeLightbox() {
-            const modal = document.getElementById('lightbox-modal');
-            modal.classList.add('opacity-0', 'pointer-events-none');
-        }
-
-        function filterCategory(cat, btn) {
-            document.querySelectorAll('.cat-btn').forEach(b => {
-                b.className = 'cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 whitespace-nowrap';
-            });
-            btn.className = 'cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-orange-500 text-white shadow-lg shadow-orange-500/20 whitespace-nowrap';
-
-            document.querySelectorAll('.product-item').forEach(item => {
-                if(cat === 'all' || item.classList.contains(cat)) {
-                    item.style.display = 'flex';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
-
-        function addToCart(name, price, code) {
-            const existing = cart.find(item => item.code === code);
-            if(existing) {
-                existing.qty += 1;
-            } else {
-                cart.push({ name, price, code, qty: 1 });
-            }
-            updateCartUI();
-            toggleCartModal(true);
-        }
-
-        function removeFromCart(code) {
-            cart = cart.filter(item => item.code !== code);
-            updateCartUI();
-        }
-
-        function updateCartUI() {
-            const itemsContainer = document.getElementById('cart-items');
-            const totalEl = document.getElementById('cart-total');
-            const badgeEl = document.getElementById('cart-badge');
-
-            const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
-            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-
-            if(totalItems > 0) {
-                badgeEl.innerText = totalItems;
-                badgeEl.classList.remove('hidden');
-            } else {
-                badgeEl.classList.add('hidden');
-            }
-
-            if(cart.length === 0) {
-                itemsContainer.innerHTML = '<p class="text-slate-500 text-xs text-center py-8">Sepetiniz şu an boş.</p>';
-            } else {
-                itemsContainer.innerHTML = cart.map(item => `
-                    <div class="flex items-center justify-between bg-slate-950 p-3 rounded-xl border border-slate-800">
-                        <div>
-                            <h4 class="text-xs font-bold text-white">${item.name}</h4>
-                            <span class="text-[11px] text-orange-400 font-semibold">${item.price} TL x ${item.qty}</span>
-                        </div>
-                        <button onclick="removeFromCart('${item.code}')" class="text-slate-500 hover:text-red-400 p-1">
-                            <i class="fa-solid fa-trash text-xs"></i>
-                        </button>
-                    </div>
-                `).join('');
-            }
-
-            totalEl.innerText = totalPrice + ' TL';
-        }
-
-        function toggleCartModal(forceOpen = false) {
-            const modal = document.getElementById('cart-modal');
-            if(forceOpen || modal.classList.contains('opacity-0')) {
-                modal.classList.remove('opacity-0', 'pointer-events-none');
-            } else {
-                modal.classList.add('opacity-0', 'pointer-events-none');
-            }
-        }
-
-        function sendWhatsAppOrder() {
-            if(cart.length === 0) {
-                alert('Lütfen önce sepetinize ürün ekleyin.');
-                return;
-            }
-            let text = "Merhaba Chako Home Store! Sipariş vermek istiyorum:%0A%0A";
-            cart.forEach(i => {
-                text += `• ${i.name} (${i.qty} adet) - ${i.price * i.qty} TL%0A`;
-            });
-            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-            text += `%0AToplam Tutar: ${total} TL%0AAdres ve teslimat detayları için bilgi alabilir miyim?`;
-
-            window.open(`https://wa.me/905324554972?text=${text}`, '_blank');
-        }
-    </script>
 </body>
 </html>
