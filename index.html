@@ -6,6 +6,9 @@
     <title>Chako Home Store | Seçkin Ev & Yaşam Ürünleri</title>
     <meta name="description" content="Chako Home Store - Ev & Aydınlatma, Mutfak ve Yaşam ürünlerinde en popüler Amazon fırsatları.">
     
+    <!-- Google Search Console Doğrulama Kodu -->
+    <meta name="google-site-verification" content="LIGRzMEKt3egaq501QPsOP4iXIERn8T-9JcHBl9WpBg" />
+
     <!-- PWA Manifest & Theme -->
     <meta name="theme-color" content="#0f172a">
     <link rel="manifest" href="manifest.json">
@@ -420,7 +423,7 @@
                 const category = card.getAttribute('data-category');
                 const title = card.getAttribute('data-title').toLowerCase();
                 
-                const matchesCategory = (currentCategory === 'all' || category === currentCategory);
+                const matchesCategory = (currentCodeCategoryCheck(currentCategory, category));
                 const matchesSearch = (title.includes(query) || query === '');
 
                 if (matchesCategory && matchesSearch) {
@@ -429,6 +432,10 @@
                     card.style.display = 'none';
                 }
             });
+        }
+
+        function currentCodeCategoryCheck(currentCat, itemCat) {
+            return (currentCat === 'all' || itemCat === currentCat);
         }
     </script>
 </body>
