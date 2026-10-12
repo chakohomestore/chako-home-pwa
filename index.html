@@ -127,21 +127,21 @@
 
         <!-- Category Filters -->
         <div class="flex items-center justify-center space-x-2 overflow-x-auto pb-2 scrollbar-none">
-            <button class="px-4 py-2 rounded-xl text-xs font-bold bg-orange-500 text-white shadow-lg shadow-orange-500/20 whitespace-nowrap">Tüm Ürünler</button>
-            <button class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 whitespace-nowrap">Aroma & Difüzör</button>
-            <button class="px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 whitespace-nowrap">Ambiyans Aydınlatma</button>
+            <button onclick="filterCategory('all', this)" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-orange-500 text-white shadow-lg shadow-orange-500/20 whitespace-nowrap">Tüm Ürünler</button>
+            <button onclick="filterCategory('aroma', this)" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 whitespace-nowrap">Aroma & Difüzör</button>
+            <button onclick="filterCategory('aydinlatma', this)" class="cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 whitespace-nowrap">Ambiyans Aydınlatma</button>
         </div>
 
         <!-- Product Cards Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
             <!-- ÜRÜN 1: Alevli Difüzör -->
-            <div class="glass-card rounded-3xl p-4 flex flex-col justify-between hover:border-orange-500/40 transition-all duration-300 group hover:-translate-y-1">
+            <div class="product-item aroma glass-card rounded-3xl p-4 flex flex-col justify-between hover:border-orange-500/40 transition-all duration-300 group hover:-translate-y-1">
                 <div class="space-y-3">
-                    <div class="relative aspect-square rounded-2xl bg-gradient-to-b from-slate-800 to-slate-900 flex items-center justify-center overflow-hidden border border-slate-800">
-                        <i class="fa-solid fa-volcano text-6xl text-orange-500 drop-shadow-[0_0_20px_rgba(249,115,22,0.6)] group-hover:scale-110 transition-transform duration-500"></i>
+                    <div class="relative aspect-square rounded-2xl overflow-hidden border border-slate-800 bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=600&q=80" alt="Volkanik Alev Aromalı Difüzör" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <span class="absolute top-2.5 left-2.5 bg-orange-500 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow">ÇOK SATAN</span>
-                        <span class="absolute top-2.5 right-2.5 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 text-[10px] font-bold px-2 py-0.5 rounded-md">Ücretsiz Kargo</span>
+                        <span class="absolute top-2.5 right-2.5 bg-emerald-500/90 text-white text-[10px] font-bold px-2 py-0.5 rounded-md backdrop-blur-sm">Ücretsiz Kargo</span>
                     </div>
                     <div>
                         <span class="text-[10px] font-bold text-orange-400 uppercase tracking-wider">Aromaterapi</span>
@@ -162,10 +162,10 @@
             </div>
 
             <!-- ÜRÜN 2: Levitasyon Ay Lambası -->
-            <div class="glass-card rounded-3xl p-4 flex flex-col justify-between hover:border-orange-500/40 transition-all duration-300 group hover:-translate-y-1">
+            <div class="product-item aydinlatma glass-card rounded-3xl p-4 flex flex-col justify-between hover:border-orange-500/40 transition-all duration-300 group hover:-translate-y-1">
                 <div class="space-y-3">
-                    <div class="relative aspect-square rounded-2xl bg-gradient-to-b from-slate-800 to-slate-900 flex items-center justify-center overflow-hidden border border-slate-800">
-                        <i class="fa-solid fa-moon text-6xl text-amber-200 drop-shadow-[0_0_25px_rgba(253,230,138,0.5)] group-hover:rotate-12 transition-transform duration-500"></i>
+                    <div class="relative aspect-square rounded-2xl overflow-hidden border border-slate-800 bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1532693322450-2cb5c511067d?auto=format&fit=crop&w=600&q=80" alt="Yüzen Levitasyonlu Ay Lambası" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <span class="absolute top-2.5 left-2.5 bg-amber-500 text-slate-950 text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow">PREMIUM</span>
                     </div>
                     <div>
@@ -187,10 +187,10 @@
             </div>
 
             <!-- ÜRÜN 3: RGB Ritim Lambası -->
-            <div class="glass-card rounded-3xl p-4 flex flex-col justify-between hover:border-orange-500/40 transition-all duration-300 group hover:-translate-y-1">
+            <div class="product-item aydinlatma glass-card rounded-3xl p-4 flex flex-col justify-between hover:border-orange-500/40 transition-all duration-300 group hover:-translate-y-1">
                 <div class="space-y-3">
-                    <div class="relative aspect-square rounded-2xl bg-gradient-to-b from-slate-800 to-slate-900 flex items-center justify-center overflow-hidden border border-slate-800">
-                        <i class="fa-solid fa-bars-staggered text-6xl text-cyan-400 drop-shadow-[0_0_20px_rgba(34,211,238,0.5)] group-hover:scale-110 transition-transform duration-500"></i>
+                    <div class="relative aspect-square rounded-2xl overflow-hidden border border-slate-800 bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" alt="Akıllı RGB Müzik Ritim Lambası" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <span class="absolute top-2.5 left-2.5 bg-cyan-500 text-slate-950 text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow">TREND</span>
                     </div>
                     <div>
@@ -212,10 +212,10 @@
             </div>
 
             <!-- ÜRÜN 4: Kristal Galaksi Küre -->
-            <div class="glass-card rounded-3xl p-4 flex flex-col justify-between hover:border-orange-500/40 transition-all duration-300 group hover:-translate-y-1">
+            <div class="product-item aydinlatma glass-card rounded-3xl p-4 flex flex-col justify-between hover:border-orange-500/40 transition-all duration-300 group hover:-translate-y-1">
                 <div class="space-y-3">
-                    <div class="relative aspect-square rounded-2xl bg-gradient-to-b from-slate-800 to-slate-900 flex items-center justify-center overflow-hidden border border-slate-800">
-                        <i class="fa-solid fa-earth-americas text-6xl text-purple-400 drop-shadow-[0_0_20px_rgba(192,132,252,0.5)] group-hover:rotate-45 transition-transform duration-700"></i>
+                    <div class="relative aspect-square rounded-2xl overflow-hidden border border-slate-800 bg-slate-900">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80" alt="3D Kristal Galaksi Küresi" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
                         <span class="absolute top-2.5 left-2.5 bg-purple-500 text-white text-[10px] font-extrabold px-2.5 py-1 rounded-full shadow">HEDİYELİK</span>
                     </div>
                     <div>
@@ -286,6 +286,21 @@
     <!-- Interactive JavaScript Logic -->
     <script>
         let cart = [];
+
+        function filterCategory(cat, btn) {
+            document.querySelectorAll('.cat-btn').forEach(b => {
+                b.className = 'cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-slate-900 border border-slate-800 text-slate-400 hover:text-white hover:border-slate-700 whitespace-nowrap';
+            });
+            btn.className = 'cat-btn px-4 py-2 rounded-xl text-xs font-bold bg-orange-500 text-white shadow-lg shadow-orange-500/20 whitespace-nowrap';
+
+            document.querySelectorAll('.product-item').forEach(item => {
+                if(cat === 'all' || item.classList.contains(cat)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
 
         function addToCart(name, price, code) {
             const existing = cart.find(item => item.code === code);
