@@ -1,0 +1,243 @@
+{
+  "categories": [
+    {
+      "id": "mutfak",
+      "name": "Mutfak"
+    },
+    {
+      "id": "ev",
+      "name": "Ev ve aydınlatma"
+    },
+    {
+      "id": "robot-supurge",
+      "name": "Robot süpürge"
+    }
+  ],
+  "products": [
+    {
+      "id": "u01",
+      "name": "Bialetti Moka Express 3 Kişilik Ocak Üstü Espresso Pişirici",
+      "category": "mutfak",
+      "description": "Orijinal İtalyan tasarımı, alüminyum gövdeli klasikten vazgeçmeyenler için espresso pişirici.",
+      "image": "https://m.media-amazon.com/images/I/51cRNu8JNqS._AC_SL1200_.jpg",
+      "url": "https://link.amazon/B0a2f9DgE",
+      "fullTitle": "Bialetti - Moka Express: 3 Cups Ocak Üstü Espresso Pişirici - 130ml - Gümüş Renk - Alüminyum Gövde - Patentli Güvenlik Valfi - Tüm Ocak Türleri İçin Uygundur (İndüksiyon Hariç)"
+    },
+    {
+      "id": "u02",
+      "name": "Robeve Güneş Enerjili 10 LED Bahçe Aydınlatması",
+      "category": "ev",
+      "description": "Dış mekan bahçe, duvar ve patika için güneş enerjisiyle çalışan A+++ tasarruflu LED projektör.",
+      "image": "https://m.media-amazon.com/images/I/81Aua4gnasL._AC_SL1500_.jpg",
+      "url": "https://link.amazon/B02roMCoc",
+      "fullTitle": "Robeve Bahçe Aydınlatması 10 Ledli Duvar ve Yere Uyumlu Güneş Enerjili LED Işık Bahçe Işığı Gün Işığı LED Dış Mekan Aydınlatması Güneş Enerjili Projektör [Enerji Sınıfı A+++]"
+    },
+    {
+      "id": "u03",
+      "name": "Philips 5500 Serisi LatteGo Tam Otomatik Espresso Makinesi",
+      "category": "mutfak",
+      "description": "Renkli dokunmatik ekranlı, sessiz demlere sahip tam otomatik kahve makinesi.",
+      "image": "https://m.media-amazon.com/images/I/71goy879pGL._AC_SL1500_.jpg",
+      "url": "https://link.amazon/B01jknVxD",
+      "fullTitle": "Philips 5500 Serisi LatteGo Tam Otomatik Espresso Makinesi, 20 Sıcak ve Soğuk İçecek, Renkli Dokunmatik Ekran, SilentBrew Teknolojisi (EP5543/90)"
+    },
+    {
+      "id": "u04",
+      "name": "Sinbo STM-5845 Çelik Elektrikli Çay Makinesi",
+      "category": "mutfak",
+      "description": "Paslanmaz çelik demlik ve su ısıtıcısı bir arada, 1600W gücünde pratik çaycı.",
+      "image": "https://m.media-amazon.com/images/I/41yCpYEa2bL._AC_.jpg",
+      "url": "https://link.amazon/B0cQLPtbk",
+      "fullTitle": "Sinbo STM-5845 Çelik Elektrikli Çay Makinesi Inox Çaycı 2-in-1 Demlik Su Isıtıcı 1600W Otomatik Kapama"
+    },
+    {
+      "id": "u05",
+      "name": "Stanley IceFlow Pipetli Termos Şişe 0,89 L Krem",
+      "category": "mutfak",
+      "description": "Pipetli, sızdırmaz tasarımlı 0.89L paslanmaz çelik Stanley soğuk tutucu termos.",
+      "image": "https://m.media-amazon.com/images/I/616qvjjWT2L._AC_SL1500_.jpg",
+      "url": "https://link.amazon/B0fylOQWF",
+      "fullTitle": "STANLEY IceFlow Flip Straw Tumbler Pipetli Termos Su Şişesi 0.89 Litre - Krem | Paslanmaz Çelik"
+    },
+    {
+      "id": "u06",
+      "name": "Stanley The Transit FlipTop Termos 0,47 L Yeşil",
+      "category": "mutfak",
+      "description": "Hafif ve sızdırmaz kapaklı, 0.47L ikonik yeşil paslanmaz çelik seyahat termosu.",
+      "image": "https://m.media-amazon.com/images/I/71Sr0oHPj1L._AC_SL1500_.jpg",
+      "url": "https://link.amazon/B0gbjjHIj",
+      "fullTitle": "STANLEY The Transit FlipTop Mug Termos 0.47 Litre - Yeşil (Hammertone Green) | Paslanmaz Çelik"
+    },
+    {
+      "id": "u07",
+      "name": "Stanley AeroLight Transit Termos Bardak 0,60 L Gri",
+      "category": "mutfak",
+      "description": "Süper hafif AeroLight çelik teknolojisiyle üretilmiş 0.60L gri renkli termos bardak.",
+      "image": "https://m.media-amazon.com/images/I/41Po+SD9mUL._AC_SL1200_.jpg",
+      "url": "https://link.amazon/B01Zj6CJp",
+      "fullTitle": "Stanley The Aerolight Transit Mug Termos Bardak, Gri (Ash), 0.60 Litre"
+    },
+    {
+      "id": "u08",
+      "name": "Orret Home Kapı Arkası Askılık 8 Kancalı Siyah",
+      "category": "ev",
+      "description": "Banyo ve oda kapıları için delmeden montaj yapılan 8 kancalı pratik metal askılık.",
+      "image": "https://m.media-amazon.com/images/I/71QZbAIKzJL._AC_SL1200_.jpg",
+      "url": "https://link.amazon/B0ewLQ5im",
+      "fullTitle": "Orret Home Metal Mat Siyah Kapı Arkası Askılık – 8 Kancalı Amerikan Tipi Organizer Askı, Banyo ve Oda Kapıları İçin Pratik Askılık, Delmeden Montajlı Kapı Arkası Askı (Siyah)"
+    },
+    {
+      "id": "u09",
+      "name": "Brita Marella XL Su Arıtma Sürahisi 3,5 L",
+      "category": "mutfak",
+      "description": "6 adet Maxtra Pro filtre hediyeli, 3.5 litrelik geniş hacimli mavi arıtma sürahisi.",
+      "image": "https://m.media-amazon.com/images/I/716gOc-WiGL._AC_SL1500_.jpg",
+      "url": "https://link.amazon/B089tAAeR",
+      "fullTitle": "BRITA Marella XL 6x Maxtra Pro All-In-1 Filtreli Su Arıtma Sürahisi Mavi (3.5 lt)"
+    },
+    {
+      "id": "u10",
+      "name": "Jouis Güneş Enerjili 7 LED Bahçe Lambası IP65",
+      "category": "ev",
+      "description": "IP65 su geçirmezlik sertifikalı, peyzaj ve duvar aydınlatması için güneş enerjili armatür.",
+      "image": "https://m.media-amazon.com/images/I/71vSd8Z6gLL._AC_SL1080_.jpg",
+      "url": "https://link.amazon/B069v9zjQ",
+      "fullTitle": "Jouis Solar Güneş Enerjili Bahçe Lambası 7 LED'li - IP65 Su Geçirmez Ayarlanabilir LED Projektör, Dış Mekan Çim, Patika, Duvar Aydınlatması ve Peyzaj Armatürü [Enerji Sınıfı A]"
+    },
+    {
+      "id": "u11",
+      "name": "Cata CT-4064 Rustik LED Ampul 7W E14 10'lu Paket",
+      "category": "ev",
+      "description": "Avizeler için özel kıvrık rustik tasarımlı, 7W E14 duy 10 adet günışığı LED ampul paketi.",
+      "image": "https://m.media-amazon.com/images/I/61lPAHdlIWL._AC_SL1500_.jpg",
+      "url": "https://link.amazon/B08SFna4Y",
+      "fullTitle": "Cata CT-4064 10'lu Paket Kıvrık LED Rustik Ampul - 7W E14 İnce Duy, Dekoratif Avize Ampulü (3000K Günışığı) [Enerji Sınıfı F]"
+    },
+    {
+      "id": "u12",
+      "name": "Fer Avize Tanya 6'lı Siyah Füme Camlı Avize",
+      "category": "ev",
+      "description": "Siyah gövdeli ve şık füme camlı, modern salon ve mutfaklar için 6'lı tavan avizesi.",
+      "image": "https://m.media-amazon.com/images/I/6125brILQqL._AC_SL1500_.jpg",
+      "url": "https://link.amazon/B022ORPhB",
+      "fullTitle": "Fer Avize Tanya Modern Tasarım Mutfak - Salon - Yatak Odası - Tavan Siyah Renk Füme Camlı 6 Lı Avize"
+    },
+    {
+      "id": "u13",
+      "name": "Reyo Teknor Çift Askılı Metal Bez Dolap 155x160 cm",
+      "category": "ev",
+      "description": "Geniş hacimli, raflı, çift askılı ve fermuarlı kumaş kılıflı portatif bez gardırop.",
+      "image": "https://m.media-amazon.com/images/I/71SHDbJ4YbL._AC_SL1500_.jpg",
+      "url": "https://link.amazon/B092BbRYJ",
+      "fullTitle": "Reyo Teknor Metal Çift Askılı Bez Dolap Gri 155x160x45 cm – Geniş Hacimli Portatif Gardırop, Raflı Kumaş Dolap, Fermuarlı Elbise Düzenleyici"
+    },
+    {
+      "id": "u14",
+      "name": "Philips HomeRun 2000 Robot Süpürge ve Paspas",
+      "category": "robot-supurge",
+      "description": "6000 PA yüksek emiş gücü, LDS navigasyon ve HomeRun uygulaması destekli akıllı robot süpürge.",
+      "image": "https://m.media-amazon.com/images/I/41Okz2-kj5L._AC_SL1080_.jpg",
+      "url": "https://link.amazon/B0iOTtBEL",
+      "fullTitle": "Philips HomeRun 2000 Robot Süpürge ve Paspas - 6000 PA emiş Gücü, Halı Modu, LDS Radar, HomeRun Uygulaması, Koyu Mavi (XU2000/15)"
+    },
+    {
+      "id": "u15",
+      "name": "Gauze Fabric Blackout Siyah Fon Perde 100x260",
+      "category": "ev",
+      "description": "Işığı %100'e yakın kesen, kaliteli kumaştan blackout siyah karartma fon perde.",
+      "image": "https://m.media-amazon.com/images/I/71XAu4XOrjL._AC_SL1500_.jpg",
+      "url": "https://link.amazon/B08p263s5",
+      "fullTitle": "Gauze Fabric Design Blackout Siyah Karartma Özellikli Fon Perde 100 x 260"
+    },
+    {
+      "id": "u16",
+      "name": "Philips HomeRun 5000 Robot Süpürge, Çift Döner Mop",
+      "category": "robot-supurge",
+      "description": "10.000 Pa devasa emiş gücü, çift döner mop ve lazer navigasyonlu amiral gemisi robot süpürge.",
+      "image": "https://m.media-amazon.com/images/I/51JMZuXwstL._AC_SL1080_.jpg",
+      "url": "https://link.amazon/B05lYHTTu",
+      "fullTitle": "Philips HomeRun 5000 Serisi Robot Elektrikli Süpürge, Çift Döner Mop, Süpürme ve Paspas, 10.000Pa Emiş Gücü, Lazer Çizgi Navigasyon, HomeRun Uygulaması, İpek Beji (XU5000/20)"
+    },
+    {
+      "id": "u17",
+      "name": "Gauze Fabric Bambu Ekru Tül Perde 150x260",
+      "category": "ev",
+      "description": "Ütü gerektirmeyen, kırışmaz özel bambu dokulu ekru renkli lüks tül perde.",
+      "image": "https://m.media-amazon.com/images/I/81rlLV-e9AL._AC_SL1500_.jpg",
+      "url": "https://link.amazon/B0aaVuvXR",
+      "fullTitle": "Gauze Fabric Design Lüks İpeksi Dokulu Bambu Kırışmaz Ütü Gerektirmez Ekru 150x260 Normal Pile (1 x 2.5) YÜKSEK KALİTELİ TÜL PERDE"
+    },
+    {
+      "id": "u18",
+      "name": "Pikas ROVOS RV-5100 Elektrikli Mini Tencere 1,8 L,",
+      "category": "mutfak",
+      "description": "Tencere",
+      "image": "https://m.media-amazon.com/images/I/81DsSqL8yWL._AC_SX679_.jpg",
+      "url": "https://www.amazon.com.tr/dp/B0HDNDG7Z6?tag=chakohomestor-21",
+      "fullTitle": "Pikas ROVOS RV-5100 Elektrikli Mini Tencere 1,8 L, Buharlı Pişirme Aparatlı, Yapışmaz Tencere, Ramen, Makarna, Çorba ve Yemek Pişirici"
+    },
+    {
+      "id": "u19",
+      "name": "Sinbo SCM-9042 Otomatik Filtre Kahve",
+      "category": "mutfak",
+      "description": "Filtre Kahve Makinası",
+      "image": "https://m.media-amazon.com/images/I/718LqeOC+GL._AC_SX679_.jpg",
+      "url": "https://www.amazon.com.tr/dp/B0HGFPN3WG?tag=chakohomestor-21",
+      "fullTitle": "Sinbo SCM-9042 Otomatik Filtre Kahve Makinesi, 14 Fincan 1.8L Cam Hazne, Taşma Önleyici, Zaman Ayarlı, Yıkanabilir Hazne"
+    },
+    {
+      "id": "u20",
+      "name": "Philips 5000 Serisi El Blender",
+      "category": "mutfak",
+      "description": "El Blender",
+      "image": "https://m.media-amazon.com/images/I/61sJYSFFMfL._AC_SX679_.jpg",
+      "url": "https://www.amazon.com.tr/dp/B0D1KVD99N?tag=chakohomestor-21",
+      "fullTitle": "Philips 5000 Serisi El Blender - SpeedTrigger Kontrolü, 1200W Motor, Paslanmaz Çelik Bıçaklar, Bebek Maması Hazır, Mikser ve Gıda İşlemci Aksesuarları (HR2695/01)"
+    },
+    {
+      "id": "u21",
+      "name": "ARVALE 4’lü Hareket Sensörlü Şarjlı Led",
+      "category": "ev",
+      "description": "4'lü hareket sensörlü LED lamba seti, otomatik açılır kapanır\nUSB Type-C şarj girişi, uzun süreli kullanım imkanı\nKablosuz kullanım, her yerde taşınabilir pratiklik",
+      "image": "https://m.media-amazon.com/images/I/61O7dfMyQxL._AC_SY741_.jpg",
+      "url": "https://www.amazon.com.tr/dp/B0G81J56M4?tag=chakohomestor-21",
+      "fullTitle": "ARVALE 4’lü Hareket Sensörlü Şarjlı Led Lamba – Beyaz Işık | USB Type-C, Mıknatıslı"
+    },
+    {
+      "id": "u22",
+      "name": "Jouis Astronot Gece Lambası Galaxy Projektör",
+      "category": "ev",
+      "description": "✅【En İyi Uyku Arkadaşı】- Astronot galaksisi gece lambası projektörü, çocuk odasındaki duvarda ve tavanda fantastik bir bulutsu ve yıldızlı gökyüzü yansıtır, geceleri rahat bir uyku ve rahatlama hissi yaratır, bu da olası çocukları sakinleştirir.",
+      "image": "https://m.media-amazon.com/images/I/51+qIw2ni3L._AC_.jpg",
+      "url": "https://www.amazon.com.tr/dp/B0CZHWQGM6?tag=chakohomestor-21",
+      "fullTitle": "ouis Astronot Gece Lambası Galaxy Projektör,LED Galaksi Işık Projektörü Çok Renkli Nebula Galaksi Yıldızlı Gece Işığı Uzaktan Kumandalı Projektör Lambası Yatak Odası Hediye için USB Planetaryum Projektörü [Enerji Sınıfı A]"
+    },
+    {
+      "id": "u23",
+      "name": "Şarjlı Dokunmatik Metal Masa Lambası",
+      "category": "ev",
+      "description": "✓ Premium Metal Gövde & Modern Tasarım ROBEVE şarjlı masa lambası, kaliteli metal gövdesi ve modern mantar formundaki tasarımı sayesinde yaşam alanlarınıza zarif bir görünüm kazandırır. Gold renk seçeneği ile ev dekorasyonu, ofis dekorasyonu, restoran ve kafe masaları için estetik bir tamamlayıcıdır.",
+      "image": "https://m.media-amazon.com/images/I/51MwpBBtH3L._AC_SX679_.jpg",
+      "url": "https://www.amazon.com.tr/dp/B0HDFFHGMM?tag=chakohomestor-21",
+      "fullTitle": "ROBEVE Şarjlı Dokunmatik Metal Masa Lambası Bronz Red | 3 Renk Işık, Ayarlanabilir Parlaklık, Kablosuz LED Gece Lambası | Ev, Ofis, Kafe, Restoran ve Yatak Odası Dekoratif Aydınlatma [Enerji Sınıfı A+++]"
+    },
+    {
+      "id": "u24",
+      "name": "Xiaomi Mi Robot Vacuum S10T Robot Süpürge ve Paspas",
+      "category": "robot-supurge",
+      "description": "Patentli Anti-Bangle teknolojisi\n8000PA yüksek vakum fan üfleyici\n5200mAh büyük pil kapasitesi\n3 su hacmi ayarı\nSüper mod—8000Pa Üstün temizleme performansı için süper güçlü fan üfleyici.\nTurbo modu—4000Pa Günlük temizlik için güçlü fan üfleyici.\nStandart mod—2000Pa Standart mod ayrıca güçlü fan fanına sahiptir.",
+      "image": "https://m.media-amazon.com/images/I/6162qNqKDIL._AC_SX522_.jpg",
+      "url": "https://www.amazon.com.tr/dp/B0BHY5ST6H?tag=chakohomestor-21",
+      "fullTitle": "Xiaomi Mi Robot Vacuum S10T Robot Süpürge ve Paspas"
+    },
+    {
+      "id": "u25",
+      "name": "PHILIPS PowerPro Max Torbasız Elektrikli Süpürge",
+      "category": "robot-supurge",
+      "description": "GÜÇLÜ PERFORMANS - 900W motor, PowerCyclone 8 teknolojisi ile sürekli yüksek emiş sağlar; tüm zemin tiplerinden gömülü tozu ve kirleri temizler\nYÜKSEK FİLTRELEME HİJYENİ - Alerji H13 filtresi ince tozların %99.9'unu yakalar; polen, evcil hayvan tüyleri ve akarlara karşı alerjisi olanlar için idealdir",
+      "image": "https://m.media-amazon.com/images/I/71kR7aXet0L._AC_SX679_.jpg",
+      "url": "https://www.amazon.com.tr/dp/B0FDX2GJGJ?tag=chakohomestor-21",
+      "fullTitle": "PHILIPS PowerPro Max Torbasız Elektrikli Süpürge - 900W, PowerCyclone 8, Alerji Kilidi, HEPA 13 Filtre, TriActive+ Başlık, Dijital Güç Kontrolü (FC9749/07)"
+    }
+  ]
+}
