@@ -47,6 +47,11 @@ a{color:inherit}
 .chip[aria-pressed="true"]{background:var(--cobalt);border-color:var(--cobalt);color:var(--white)}
 .chip .n{font-weight:500;opacity:.75;margin-left:6px}
 
+@media (min-width:900px){
+  .filters{position:static}
+  .filters .wrap{flex-wrap:wrap;overflow:visible}
+}
+
 /* Ürünler */
 main{flex:1;padding:24px 0 8px}
 .status{margin:0 0 16px;color:var(--muted);font-size:.92rem;min-height:1.4em}

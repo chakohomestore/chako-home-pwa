@@ -27,10 +27,10 @@ Amazon Türkiye ortaklık (affiliate) vitrini. Derleme (build) gerektirmez; klas
 }
 ```
 
-`category` değeri şunlardan biri olmalı: `mutfak`, `ev`, `robot-supurge`.
+`category` değeri, `products.json` en üstündeki `categories` listesindeki `id` değerlerinden biri olmalı. Ürünü olmayan kategoriler sitede otomatik gizlenir.
 Her ürünün `url` alanı SiteStripe ile oluşturduğunuz ortaklık bağlantısı olmalı (komisyonunuz bu bağlantıdaki ortaklık kimliğine yazılır).
 
 ## Yayına alma
 
 GitHub'da dosyayı değiştirip "Commit changes" deyin. Netlify birkaç saniye içinde otomatik yayınlar.
-Büyük bir değişiklikten sonra `sw.js` içindeki `chako-v1` yazısını `chako-v2` yapın (eski önbellek temizlenir).
+Büyük bir değişiklikten sonra `sw.js` içindeki `chako-v3` yazısını `chako-v4` yapın (sürüm numarasını bir artırın) (eski önbellek temizlenir).

@@ -76,15 +76,20 @@
 
     buildChips();
     var fromUrl = new URLSearchParams(location.search).get('kategori');
-    if (fromUrl && catNames[fromUrl]) state.cat = fromUrl;
+    if (fromUrl && chipsBox.querySelector('[data-cat="' + fromUrl + '"]')) state.cat = fromUrl;
     apply();
   }
 
   function buildChips() {
-    var items = [{ id: 'all', name: 'Tümü' }].concat(data.categories);
+    // Ürünü olmayan kategoriler gösterilmez; ilk ürün eklenince kendiliğinden belirir
+    var used = data.categories.filter(function (c) {
+      return data.products.some(function (p) { return p.category === c.id; });
+    });
+    var items = [{ id: 'all', name: 'Tümü' }].concat(used);
     items.forEach(function (c) {
       var count = c.id === 'all' ? data.products.length
         : data.products.filter(function (p) { return p.category === c.id; }).length;
+      if (count === 0) return; // ürünü olmayan kategori sitede gösterilmez
       var b = el('button', 'chip');
       b.type = 'button';
       b.dataset.cat = c.id;
