@@ -1,0 +1,148 @@
+/* Chako Home Store – ürünleri products.json dosyasından okur, kategori ve arama filtresi uygular. */
+(function () {
+  'use strict';
+
+  var grid = document.getElementById('grid');
+  var chipsBox = document.getElementById('chips');
+  var statusEl = document.getElementById('status');
+  var searchEl = document.getElementById('search');
+
+  var state = { cat: 'all', q: '' };
+  var data = null;
+  var cards = [];
+
+  // Türkçe harfleri sadeleştirir: "Çay" ve "cay" aynı sayılır
+  function norm(s) {
+    return String(s).toLocaleLowerCase('tr').replace(/ı/g, 'i')
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  }
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text) e.textContent = text;
+    return e;
+  }
+
+  var ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>';
+
+  function buildCard(p, catName) {
+    var li = el('li', 'card');
+    var pic = el('div', 'pic');
+    var img = document.createElement('img');
+    img.src = p.image;
+    img.alt = p.name;
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    img.referrerPolicy = 'no-referrer';
+    img.addEventListener('error', function () {
+      pic.textContent = '';
+      pic.appendChild(el('span', 'ph', p.name));
+    });
+    pic.appendChild(img);
+
+    var info = el('div', 'info');
+    info.appendChild(el('p', 'cat', catName));
+    info.appendChild(el('h2', '', p.name));
+    info.appendChild(el('p', 'desc', p.description));
+
+    var a = document.createElement('a');
+    a.className = 'btn';
+    a.href = p.url;
+    a.target = '_blank';
+    a.rel = 'sponsored nofollow noopener noreferrer';
+    a.setAttribute('aria-label', p.name + ' ürününü Amazon\'da incele');
+    a.innerHTML = '<span>Amazon\'da incele</span>' + ARROW;
+    info.appendChild(a);
+
+    li.appendChild(pic);
+    li.appendChild(info);
+    return li;
+  }
+
+  function render() {
+    var catNames = {};
+    data.categories.forEach(function (c) { catNames[c.id] = c.name; });
+
+    data.products.forEach(function (p) {
+      var li = buildCard(p, catNames[p.category] || '');
+      grid.appendChild(li);
+      cards.push({
+        el: li,
+        cat: p.category,
+        text: norm(p.name + ' ' + p.fullTitle + ' ' + p.description + ' ' + (catNames[p.category] || ''))
+      });
+    });
+
+    buildChips();
+    var fromUrl = new URLSearchParams(location.search).get('kategori');
+    if (fromUrl && catNames[fromUrl]) state.cat = fromUrl;
+    apply();
+  }
+
+  function buildChips() {
+    var items = [{ id: 'all', name: 'Tümü' }].concat(data.categories);
+    items.forEach(function (c) {
+      var count = c.id === 'all' ? data.products.length
+        : data.products.filter(function (p) { return p.category === c.id; }).length;
+      var b = el('button', 'chip');
+      b.type = 'button';
+      b.dataset.cat = c.id;
+      b.appendChild(document.createTextNode(c.name));
+      b.appendChild(el('span', 'n', String(count)));
+      b.addEventListener('click', function () { state.cat = c.id; apply(); });
+      chipsBox.appendChild(b);
+    });
+  }
+
+  function apply() {
+    var q = norm(state.q.trim());
+    var shown = 0;
+    cards.forEach(function (c) {
+      var ok = (state.cat === 'all' || c.cat === state.cat) && (q === '' || c.text.indexOf(q) !== -1);
+      c.el.hidden = !ok;
+      if (ok) shown++;
+    });
+
+    Array.prototype.forEach.call(chipsBox.children, function (b) {
+      b.setAttribute('aria-pressed', String(b.dataset.cat === state.cat));
+    });
+
+    var old = document.getElementById('empty');
+    if (old) old.remove();
+    if (shown === 0) {
+      var li = el('li');
+      li.id = 'empty';
+      li.style.gridColumn = '1 / -1';
+      var box = el('div', 'empty');
+      box.appendChild(el('p', '', 'Aramanıza uyan ürün bulunamadı. Başka bir kelime deneyin.'));
+      var btn = el('button', '', 'Filtreleri temizle');
+      btn.type = 'button';
+      btn.addEventListener('click', function () { state.cat = 'all'; state.q = ''; searchEl.value = ''; apply(); });
+      box.appendChild(btn);
+      li.appendChild(box);
+      grid.appendChild(li);
+    }
+    statusEl.textContent = shown + ' ürün gösteriliyor';
+
+    var url = new URL(location.href);
+    if (state.cat === 'all') url.searchParams.delete('kategori'); else url.searchParams.set('kategori', state.cat);
+    history.replaceState(null, '', url);
+  }
+
+  searchEl.addEventListener('input', function () { state.q = searchEl.value; apply(); });
+
+  fetch('products.json', { cache: 'no-cache' })
+    .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(function (d) { data = d; render(); })
+    .catch(function () {
+      statusEl.textContent = 'Ürünler yüklenemedi. Sayfayı yenileyip tekrar deneyin.';
+    });
+
+  // Çevrimdışı çalışma ve "ana ekrana ekle" için service worker
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('sw.js').catch(function () {});
+    });
+  }
+})();

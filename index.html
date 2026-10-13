@@ -1,442 +1,75 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chako Home Store | Seçkin Ev & Yaşam Ürünleri</title>
-    <meta name="description" content="Chako Home Store - Ev & Aydınlatma, Mutfak ve Yaşam ürünlerinde en popüler Amazon fırsatları.">
-    
-    <!-- Google Search Console Doğrulama Kodu -->
-    <meta name="google-site-verification" content="LIGRzMEKt3egaq501QPsOP4iXIERn8T-9JcHBl9WpBg" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chako Home Store | Ev, mutfak ve aydınlatma ürünleri</title>
+  <meta name="description" content="Mutfak, ev aydınlatma ve robot süpürge kategorilerinde seçtiğimiz Amazon Türkiye ürünleri.">
+  <link rel="canonical" href="https://chakohomestore.netlify.app/">
 
-    <!-- PWA Manifest & Theme -->
-    <meta name="theme-color" content="#0f172a">
-    <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="icon-192.png">
+  <!-- Google Search Console doğrulama kodu (silmeyin) -->
+  <meta name="google-site-verification" content="LIGRzMEKt3egaq501QPsOP4iXIERn8T-9JcHBl9WpBg">
 
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-    </style>
+  <!-- Paylaşım önizlemesi -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Chako Home Store">
+  <meta property="og:description" content="Mutfak, ev aydınlatma ve robot süpürge kategorilerinde seçtiğimiz Amazon Türkiye ürünleri.">
+  <meta property="og:url" content="https://chakohomestore.netlify.app/">
+  <meta property="og:image" content="https://chakohomestore.netlify.app/icon-512.png">
+
+  <!-- PWA -->
+  <meta name="theme-color" content="#1b3a8c">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon-192.png" type="image/png">
+  <link rel="apple-touch-icon" href="icon-192.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Manrope:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+<body>
 
-    <!-- Header / Navbar -->
-    <header class="sticky top-0 z-50 bg-slate-900 text-white shadow-lg border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Profesyonel Vektörel Kurumsal Logo -->
-            <div class="flex items-center space-x-3.5 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
-                <div class="flex items-center justify-center w-12 h-12 bg-gradient-to-tr from-amber-500 to-amber-400 rounded-2xl shadow-md shadow-amber-500/20 text-slate-950 border border-amber-300/40">
-                    <svg class="w-7 h-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                        <polyline points="9 22 9 12 15 12 15 22"/>
-                        <circle cx="12" cy="7" r="1" fill="currentColor"/>
-                    </svg>
-                </div>
-                <div class="flex flex-col justify-center">
-                    <span class="text-xl sm:text-2xl font-extrabold tracking-tight text-white leading-none">
-                        CHAKO <span class="text-amber-400 font-black">HOME</span>
-                    </span>
-                    <span class="text-[11px] font-semibold text-slate-400 uppercase tracking-widest mt-1 flex items-center gap-1.5">
-                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span>
-                        Store & Affiliate
-                    </span>
-                </div>
-            </div>
-            
-            <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-300">
-                <span class="flex items-center gap-2 bg-slate-800/90 px-4 py-2 rounded-xl border border-slate-700/70 text-emerald-400 text-xs font-semibold shadow-inner">
-                    <i class="fa-solid fa-shield-check text-sm"></i> Amazon Güvencesiyle
-                </span>
-            </div>
+  <header class="hero">
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="Chako Home Store ana sayfa">
+        <svg viewBox="0 0 40 40" aria-hidden="true">
+          <rect width="40" height="40" rx="10" fill="#fff"/>
+          <path d="M8 19 20 9l12 10v12a1.5 1.5 0 0 1-1.5 1.5h-21A1.5 1.5 0 0 1 8 31z" fill="#1b3a8c"/>
+          <rect x="17" y="22" width="6" height="10.5" rx="1" fill="#d6402c"/>
+        </svg>
+        Chako Home
+      </a>
+      <div class="hero-body">
+        <h1>Ev için seçtiğimiz Amazon ürünleri</h1>
+        <p>Mutfak, aydınlatma ve robot süpürge kategorilerinde Amazon Türkiye'de satılan ürünler. Satın almak için ürün kartındaki düğmeyle Amazon'a geçersiniz.</p>
+        <div class="search" role="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="search" type="search" placeholder="Ürün veya marka ara, örn. Stanley" aria-label="Ürün ara" autocomplete="off">
         </div>
-    </header>
+        <p class="note">Bu sitedeki ürün bağlantıları Amazon ortaklık bağlantılarıdır. Bağlantıdan alışveriş yaparsanız ödediğiniz fiyat değişmez, biz Amazon'dan küçük bir komisyon alırız.</p>
+      </div>
+    </div>
+  </header>
 
-    <!-- Banner / Hero Section -->
-    <section class="bg-gradient-to-r from-slate-900 via-slate-800 to-indigo-950 text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-slate-800 relative overflow-hidden">
-        <div class="absolute -right-20 -top-20 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto text-center relative z-10">
-            <span class="bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-semibold px-3.5 py-1.5 rounded-full uppercase tracking-wider inline-block mb-3 shadow-sm">
-                Özenle Seçilmiş Sezon Ürünleri
-            </span>
-            <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-3">Ev ve Yaşamınız İçin En İyisi</h2>
-            <p class="text-slate-300 max-w-2xl mx-auto text-sm sm:text-base leading-relaxed mb-6">
-                Mutfak gereçlerinden akıllı robot süpürgelere, aydınlatmadan ev dekorasyonuna kadar en popüler Amazon ürünlerini tek platformda keşfedin.
-            </p>
+  <nav class="filters" aria-label="Kategoriler">
+    <div class="wrap" id="chips"></div>
+  </nav>
 
-            <!-- Arama Kutusu -->
-            <div class="max-w-md mx-auto relative">
-                <span class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none text-slate-400">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </span>
-                <input type="text" id="search-input" onkeyup="searchProducts()" placeholder="Ürün veya kategori ara (Örn: Stanley, Philips, Moka)..." class="w-full pl-11 pr-4 py-3 bg-slate-800/90 border border-slate-700 text-white placeholder-slate-400 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-amber-500 shadow-lg transition">
-            </div>
-        </div>
-    </section>
+  <main class="wrap">
+    <p class="status" id="status" aria-live="polite"></p>
+    <ul class="grid" id="grid"></ul>
+    <noscript><p>Ürünleri görmek için tarayıcınızda JavaScript'i açın.</p></noscript>
+  </main>
 
-    <!-- Category Filter Bar -->
-    <nav class="bg-white border-b border-slate-200 sticky top-20 z-40 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <div class="flex space-x-2 overflow-x-auto pb-1 scrollbar-none text-sm font-medium" id="category-filters">
-                <button onclick="filterCategory('all')" class="cat-btn active bg-amber-500 text-slate-900 font-semibold px-4 py-2 rounded-xl whitespace-nowrap shadow-sm transition flex items-center gap-2">
-                    <i class="fa-solid fa-border-all"></i> Tümü (17)
-                </button>
-                <button onclick="filterCategory('mutfak')" class="cat-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl whitespace-nowrap transition flex items-center gap-2">
-                    <i class="fa-solid fa-mug-hot text-amber-600"></i> Pratik Mutfak Aletleri
-                </button>
-                <button onclick="filterCategory('ev')" class="cat-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl whitespace-nowrap transition flex items-center gap-2">
-                    <i class="fa-solid fa-lightbulb text-amber-600"></i> Ev & Aydınlatma
-                </button>
-                <button onclick="filterCategory('elektronik')" class="cat-btn bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-xl whitespace-nowrap transition flex items-center gap-2">
-                    <i class="fa-solid fa-robot text-amber-600"></i> Robot Süpürge & Elektrikli
-                </button>
-            </div>
-        </div>
-    </nav>
+  <footer>
+    <div class="wrap">
+      <p><strong>Chako Home Store</strong> bir Amazon Ortaklık (affiliate) sitesidir. Ürünleri biz satmıyoruz, stok tutmuyoruz ve kargo yapmıyoruz. Sipariş, ödeme, teslimat ve iade işlemleri Amazon Türkiye üzerinden yapılır.</p>
+      <p id="disclosure">Bir Amazon Ortağı olarak, nitelikli satın alımlardan kazanç sağlıyoruz.</p>
+      <p>&copy; 2026 Chako Home Store</p>
+    </div>
+  </footer>
 
-    <!-- Main Content / Product Grid -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="product-grid">
-
-            <!-- 1. Bialetti Moka Express -->
-            <div class="product-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="mutfak" data-title="Bialetti Moka Express 3 Cups Ocak Üstü Espresso Pişirici 130ml Gümüş">
-                <div class="p-4 bg-white flex items-center justify-center border-b border-slate-100 h-64 relative overflow-hidden">
-                    <span class="absolute top-3 left-3 bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-1 rounded-lg z-10 shadow-xs">Mutfak</span>
-                    <img src="https://m.media-amazon.com/images/I/51cRNu8JNqS._AC_SL1200_.jpg" alt="Bialetti Moka Express" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <h3 class="font-bold text-slate-900 text-base mb-2 line-clamp-3 group-hover:text-amber-600 transition-colors">Bialetti - Moka Express: 3 Cups Ocak Üstü Espresso Pişirici - 130ml - Gümüş Renk - Alüminyum Gövde - Patentli Güvenlik Valfi - Tüm Ocak Türleri İçin Uygundur (İndüksiyon Hariç)</h3>
-                    <p class="text-xs text-slate-500 mb-4 flex-grow">Orijinal İtalyan tasarımı, alüminyum gövdeli klasikten vazgeçmeyenler için espresso pişirici.</p>
-                    <a href="https://link.amazon/B0a2f9DgE" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-500 text-white hover:text-slate-950 font-bold py-3 px-4 rounded-xl text-center text-sm transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-md">
-                        <span>Amazon'da İncele</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 2. Robeve Bahçe Aydınlatması -->
-            <div class="product-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="ev" data-title="Robeve Bahçe Aydınlatması 10 Ledli Duvar Yere Uyumlu Güneş Enerjili LED Işık">
-                <div class="p-4 bg-white flex items-center justify-center border-b border-slate-100 h-64 relative overflow-hidden">
-                    <span class="absolute top-3 left-3 bg-indigo-100 text-indigo-800 text-xs font-bold px-2.5 py-1 rounded-lg z-10 shadow-xs">Ev & Aydınlatma</span>
-                    <img src="https://m.media-amazon.com/images/I/81Aua4gnasL._AC_SL1500_.jpg" alt="Robeve Bahçe Aydınlatması" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <h3 class="font-bold text-slate-900 text-base mb-2 line-clamp-3 group-hover:text-amber-600 transition-colors">Robeve Bahçe Aydınlatması 10 Ledli Duvar ve Yere Uyumlu Güneş Enerjili LED Işık Bahçe Işığı Gün Işığı LED Dış Mekan Aydınlatması Güneş Enerjili Projektör [Enerji Sınıfı A+++]</h3>
-                    <p class="text-xs text-slate-500 mb-4 flex-grow">Dış mekan bahçe, duvar ve patika için güneş enerjisiyle çalışan A+++ tasarruflu LED projektör.</p>
-                    <a href="https://link.amazon/B02roMCoc" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-500 text-white hover:text-slate-950 font-bold py-3 px-4 rounded-xl text-center text-sm transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-md">
-                        <span>Amazon'da İncele</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 3. Philips 5500 Serisi LatteGo -->
-            <div class="product-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="mutfak" data-title="Philips 5500 Serisi LatteGo Tam Otomatik Espresso Makinesi">
-                <div class="p-4 bg-white flex items-center justify-center border-b border-slate-100 h-64 relative overflow-hidden">
-                    <span class="absolute top-3 left-3 bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-1 rounded-lg z-10 shadow-xs">Mutfak</span>
-                    <img src="https://m.media-amazon.com/images/I/71goy879pGL._AC_SL1500_.jpg" alt="Philips 5500 Serisi LatteGo" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <h3 class="font-bold text-slate-900 text-base mb-2 line-clamp-3 group-hover:text-amber-600 transition-colors">Philips 5500 Serisi LatteGo Tam Otomatik Espresso Makinesi, 20 Sıcak ve Soğuk İçecek, Renkli Dokunmatik Ekran, SilentBrew Teknolojisi (EP5543/90)</h3>
-                    <p class="text-xs text-slate-500 mb-4 flex-grow">Renkli dokunmatik ekranlı, sessiz demlere sahip tam otomatik kahve makinesi.</p>
-                    <a href="https://link.amazon/B01jknVxD" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-500 text-white hover:text-slate-950 font-bold py-3 px-4 rounded-xl text-center text-sm transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-md">
-                        <span>Amazon'da İncele</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 4. Sinbo STM-5845 Çelik Elektrikli Çay Makinesi -->
-            <div class="product-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="mutfak" data-title="Sinbo STM-5845 Çelik Elektrikli Çay Makinesi Inox Çaycı">
-                <div class="p-4 bg-white flex items-center justify-center border-b border-slate-100 h-64 relative overflow-hidden">
-                    <span class="absolute top-3 left-3 bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-1 rounded-lg z-10 shadow-xs">Mutfak</span>
-                    <img src="https://m.media-amazon.com/images/I/41yCpYEa2bL._AC_.jpg" alt="Sinbo STM-5845 Çay Makinesi" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <h3 class="font-bold text-slate-900 text-base mb-2 line-clamp-3 group-hover:text-amber-600 transition-colors">Sinbo STM-5845 Çelik Elektrikli Çay Makinesi Inox Çaycı 2-in-1 Demlik Su Isıtıcı 1600W Otomatik Kapama</h3>
-                    <p class="text-xs text-slate-500 mb-4 flex-grow">Paslanmaz çelik demlik ve su ısıtıcısı bir arada, 1600W gücünde pratik çaycı.</p>
-                    <a href="https://link.amazon/B0cQLPtbk" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-500 text-white hover:text-slate-950 font-bold py-3 px-4 rounded-xl text-center text-sm transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-md">
-                        <span>Amazon'da İncele</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 5. STANLEY IceFlow Flip Straw Tumbler 0.89 Litre -->
-            <div class="product-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="mutfak" data-title="STANLEY IceFlow Flip Straw Tumbler Pipetli Termos Su Şişesi 0.89 Litre">
-                <div class="p-4 bg-white flex items-center justify-center border-b border-slate-100 h-64 relative overflow-hidden">
-                    <span class="absolute top-3 left-3 bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-1 rounded-lg z-10 shadow-xs">Mutfak</span>
-                    <img src="https://m.media-amazon.com/images/I/616qvjjWT2L._AC_SL1500_.jpg" alt="STANLEY IceFlow Tumbler" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <h3 class="font-bold text-slate-900 text-base mb-2 line-clamp-3 group-hover:text-amber-600 transition-colors">STANLEY IceFlow Flip Straw Tumbler Pipetli Termos Su Şişesi 0.89 Litre - Krem | Paslanmaz Çelik</h3>
-                    <p class="text-xs text-slate-500 mb-4 flex-grow">Pipetli, sızdırmaz tasarımlı 0.89L paslanmaz çelik Stanley soğuk tutucu termos.</p>
-                    <a href="https://link.amazon/B0fylOQWF" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-500 text-white hover:text-slate-950 font-bold py-3 px-4 rounded-xl text-center text-sm transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-md">
-                        <span>Amazon'da İncele</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 6. STANLEY The Transit FlipTop Mug Termos 0.47 Litre -->
-            <div class="product-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="mutfak" data-title="STANLEY The Transit FlipTop Mug Termos 0.47 Litre Yeşil">
-                <div class="p-4 bg-white flex items-center justify-center border-b border-slate-100 h-64 relative overflow-hidden">
-                    <span class="absolute top-3 left-3 bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-1 rounded-lg z-10 shadow-xs">Mutfak</span>
-                    <img src="https://m.media-amazon.com/images/I/71Sr0oHPj1L._AC_SL1500_.jpg" alt="STANLEY The Transit FlipTop Mug Termos" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <h3 class="font-bold text-slate-900 text-base mb-2 line-clamp-3 group-hover:text-amber-600 transition-colors">STANLEY The Transit FlipTop Mug Termos 0.47 Litre - Yeşil (Hammertone Green) | Paslanmaz Çelik</h3>
-                    <p class="text-xs text-slate-500 mb-4 flex-grow">Hafif ve sızdırmaz kapaklı, 0.47L ikonik yeşil paslanmaz çelik seyahat termosu.</p>
-                    <a href="https://link.amazon/B0gbjjHIj" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-500 text-white hover:text-slate-950 font-bold py-3 px-4 rounded-xl text-center text-sm transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-md">
-                        <span>Amazon'da İncele</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 7. Stanley The Aerolight Transit Mug Termos 0.60 Litre -->
-            <div class="product-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="mutfak" data-title="Stanley The Aerolight Transit Mug Termos Bardak Gri 0.60 Litre">
-                <div class="p-4 bg-white flex items-center justify-center border-b border-slate-100 h-64 relative overflow-hidden">
-                    <span class="absolute top-3 left-3 bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-1 rounded-lg z-10 shadow-xs">Mutfak</span>
-                    <img src="https://m.media-amazon.com/images/I/41Po+SD9mUL._AC_SL1200_.jpg" alt="Stanley The Aerolight Transit Mug" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <h3 class="font-bold text-slate-900 text-base mb-2 line-clamp-3 group-hover:text-amber-600 transition-colors">Stanley The Aerolight Transit Mug Termos Bardak, Gri (Ash), 0.60 Litre</h3>
-                    <p class="text-xs text-slate-500 mb-4 flex-grow">Süper hafif AeroLight çelik teknolojisiyle üretilmiş 0.60L gri renkli termos bardak.</p>
-                    <a href="https://link.amazon/B01Zj6CJp" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-500 text-white hover:text-slate-950 font-bold py-3 px-4 rounded-xl text-center text-sm transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-md">
-                        <span>Amazon'da İncele</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 8. Orret Home Metal Mat Siyah Kapı Arkası Askılık -->
-            <div class="product-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="ev" data-title="Orret Home Metal Mat Siyah Kapı Arkası Askılık 8 Kancalı Organizer">
-                <div class="p-4 bg-white flex items-center justify-center border-b border-slate-100 h-64 relative overflow-hidden">
-                    <span class="absolute top-3 left-3 bg-indigo-100 text-indigo-800 text-xs font-bold px-2.5 py-1 rounded-lg z-10 shadow-xs">Ev & Aydınlatma</span>
-                    <img src="https://m.media-amazon.com/images/I/71QZbAIKzJL._AC_SL1200_.jpg" alt="Orret Home Metal Mat Siyah Kapı Arkası Askılık" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <h3 class="font-bold text-slate-900 text-base mb-2 line-clamp-3 group-hover:text-amber-600 transition-colors">Orret Home Metal Mat Siyah Kapı Arkası Askılık – 8 Kancalı Amerikan Tipi Organizer Askı, Banyo ve Oda Kapıları İçin Pratik Askılık, Delmeden Montajlı Kapı Arkası Askı (Siyah)</h3>
-                    <p class="text-xs text-slate-500 mb-4 flex-grow">Banyo ve oda kapıları için delmeden montaj yapılan 8 kancalı pratik metal askılık.</p>
-                    <a href="https://link.amazon/B0ewLQ5im" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-500 text-white hover:text-slate-950 font-bold py-3 px-4 rounded-xl text-center text-sm transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-md">
-                        <span>Amazon'da İncele</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 9. BRITA Marella XL 6x Maxtra Pro All-In-1 Filtreli Su Arıtma Sürahisi -->
-            <div class="product-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="mutfak" data-title="BRITA Marella XL 6x Maxtra Pro All-In-1 Filtreli Su Arıtma Sürahisi Mavi">
-                <div class="p-4 bg-white flex items-center justify-center border-b border-slate-100 h-64 relative overflow-hidden">
-                    <span class="absolute top-3 left-3 bg-amber-100 text-amber-800 text-xs font-bold px-2.5 py-1 rounded-lg z-10 shadow-xs">Mutfak</span>
-                    <img src="https://m.media-amazon.com/images/I/716gOc-WiGL._AC_SL1500_.jpg" alt="BRITA Marella XL Su Arıtma Sürahisi" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <h3 class="font-bold text-slate-900 text-base mb-2 line-clamp-3 group-hover:text-amber-600 transition-colors">BRITA Marella XL 6x Maxtra Pro All-In-1 Filtreli Su Arıtma Sürahisi Mavi (3.5 lt)</h3>
-                    <p class="text-xs text-slate-500 mb-4 flex-grow">6 adet Maxtra Pro filtre hediyeli, 3.5 litrelik geniş hacimli mavi arıtma sürahisi.</p>
-                    <a href="https://link.amazon/B089tAAeR" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-500 text-white hover:text-slate-950 font-bold py-3 px-4 rounded-xl text-center text-sm transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-md">
-                        <span>Amazon'da İncele</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 10. Jouis Solar Güneş Enerjili Bahçe Lambası 7 LED'li -->
-            <div class="product-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="ev" data-title="Jouis Solar Güneş Enerjili Bahçe Lambası 7 LEDli IP65 Projektör">
-                <div class="p-4 bg-white flex items-center justify-center border-b border-slate-100 h-64 relative overflow-hidden">
-                    <span class="absolute top-3 left-3 bg-indigo-100 text-indigo-800 text-xs font-bold px-2.5 py-1 rounded-lg z-10 shadow-xs">Ev & Aydınlatma</span>
-                    <img src="https://m.media-amazon.com/images/I/71vSd8Z6gLL._AC_SL1080_.jpg" alt="Jouis Solar Güneş Enerjili Bahçe Lambası" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <h3 class="font-bold text-slate-900 text-base mb-2 line-clamp-3 group-hover:text-amber-600 transition-colors">Jouis Solar Güneş Enerjili Bahçe Lambası 7 LED'li - IP65 Su Geçirmez Ayarlanabilir LED Projektör, Dış Mekan Çim, Patika, Duvar Aydınlatması ve Peyzaj Armatürü [Enerji Sınıfı A]</h3>
-                    <p class="text-xs text-slate-500 mb-4 flex-grow">IP65 su geçirmezlik sertifikalı, peyzaj ve duvar aydınlatması için güneş enerjili armatür.</p>
-                    <a href="https://link.amazon/B069v9zjQ" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-500 text-white hover:text-slate-950 font-bold py-3 px-4 rounded-xl text-center text-sm transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-md">
-                        <span>Amazon'da İncele</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 11. Cata CT-4064 10'lu Paket Kıvrık LED Rustik Ampul -->
-            <div class="product-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="ev" data-title="Cata CT-4064 10lu Paket Kıvrık LED Rustik Ampul 7W E14">
-                <div class="p-4 bg-white flex items-center justify-center border-b border-slate-100 h-64 relative overflow-hidden">
-                    <span class="absolute top-3 left-3 bg-indigo-100 text-indigo-800 text-xs font-bold px-2.5 py-1 rounded-lg z-10 shadow-xs">Ev & Aydınlatma</span>
-                    <img src="https://m.media-amazon.com/images/I/61lPAHdlIWL._AC_SL1500_.jpg" alt="Cata CT-4064 10'lu Paket Kıvrık LED Rustik Ampul" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <h3 class="font-bold text-slate-900 text-base mb-2 line-clamp-3 group-hover:text-amber-600 transition-colors">Cata CT-4064 10'lu Paket Kıvrık LED Rustik Ampul - 7W E14 İnce Duy, Dekoratif Avize Ampulü (3000K Günışığı) [Enerji Sınıfı F]</h3>
-                    <p class="text-xs text-slate-500 mb-4 flex-grow">Avizeler için özel kıvrık rustik tasarımlı, 7W E14 duy 10 adet günışığı LED ampul paketi.</p>
-                    <a href="https://link.amazon/B08SFna4Y" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-500 text-white hover:text-slate-950 font-bold py-3 px-4 rounded-xl text-center text-sm transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-md">
-                        <span>Amazon'da İncele</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 12. Fer Avize Tanya Modern Tasarım 6 Lı Avize -->
-            <div class="product-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="ev" data-title="Fer Avize Tanya Modern Tasarım 6 Lı Avize Siyah Füme Camlı">
-                <div class="p-4 bg-white flex items-center justify-center border-b border-slate-100 h-64 relative overflow-hidden">
-                    <span class="absolute top-3 left-3 bg-indigo-100 text-indigo-800 text-xs font-bold px-2.5 py-1 rounded-lg z-10 shadow-xs">Ev & Aydınlatma</span>
-                    <img src="https://m.media-amazon.com/images/I/6125brILQqL._AC_SL1500_.jpg" alt="Fer Avize Tanya 6 Lı Avize" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <h3 class="font-bold text-slate-900 text-base mb-2 line-clamp-3 group-hover:text-amber-600 transition-colors">Fer Avize Tanya Modern Tasarım Mutfak - Salon - Yatak Odası - Tavan Siyah Renk Füme Camlı 6 Lı Avize</h3>
-                    <p class="text-xs text-slate-500 mb-4 flex-grow">Siyah gövdeli ve şık füme camlı, modern salon ve mutfaklar için 6'lı tavan avizesi.</p>
-                    <a href="https://link.amazon/B022ORPhB" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-500 text-white hover:text-slate-950 font-bold py-3 px-4 rounded-xl text-center text-sm transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-md">
-                        <span>Amazon'da İncele</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 13. Reyo Teknor Metal Çift Askılı Bez Dolap Gri -->
-            <div class="product-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="ev" data-title="Reyo Teknor Metal Çift Askılı Bez Dolap Gri Portatif Gardırop">
-                <div class="p-4 bg-white flex items-center justify-center border-b border-slate-100 h-64 relative overflow-hidden">
-                    <span class="absolute top-3 left-3 bg-indigo-100 text-indigo-800 text-xs font-bold px-2.5 py-1 rounded-lg z-10 shadow-xs">Ev & Aydınlatma</span>
-                    <img src="https://m.media-amazon.com/images/I/71SHDbJ4YbL._AC_SL1500_.jpg" alt="Reyo Teknor Metal Çift Askılı Bez Dolap" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <h3 class="font-bold text-slate-900 text-base mb-2 line-clamp-3 group-hover:text-amber-600 transition-colors">Reyo Teknor Metal Çift Askılı Bez Dolap Gri 155x160x45 cm – Geniş Hacimli Portatif Gardırop, Raflı Kumaş Dolap, Fermuarlı Elbise Düzenleyici</h3>
-                    <p class="text-xs text-slate-500 mb-4 flex-grow">Geniş hacimli, raflı, çift askılı ve fermuarlı kumaş kılıflı portatif bez gardırop.</p>
-                    <a href="https://link.amazon/B092BbRYJ" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-500 text-white hover:text-slate-950 font-bold py-3 px-4 rounded-xl text-center text-sm transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-md">
-                        <span>Amazon'da İncele</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 14. Philips HomeRun 2000 Robot Süpürge -->
-            <div class="product-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="elektronik" data-title="Philips HomeRun 2000 Robot Süpürge ve Paspas 6000 PA">
-                <div class="p-4 bg-white flex items-center justify-center border-b border-slate-100 h-64 relative overflow-hidden">
-                    <span class="absolute top-3 left-3 bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-1 rounded-lg z-10 shadow-xs">Robot Süpürge</span>
-                    <img src="https://m.media-amazon.com/images/I/41Okz2-kj5L._AC_SL1080_.jpg" alt="Philips HomeRun 2000 Robot Süpürge" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <h3 class="font-bold text-slate-900 text-base mb-2 line-clamp-3 group-hover:text-amber-600 transition-colors">Philips HomeRun 2000 Robot Süpürge ve Paspas - 6000 PA emiş Gücü, Halı Modu, LDS Radar, HomeRun Uygulaması, Koyu Mavi (XU2000/15)</h3>
-                    <p class="text-xs text-slate-500 mb-4 flex-grow">6000 PA yüksek emiş gücü, LDS navigasyon ve HomeRun uygulaması destekli akıllı robot süpürge.</p>
-                    <a href="https://link.amazon/B0iOTtBEL" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-500 text-white hover:text-slate-950 font-bold py-3 px-4 rounded-xl text-center text-sm transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-md">
-                        <span>Amazon'da İncele</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 15. Gauze Fabric Blackout Siyah Karartma Fon Perde -->
-            <div class="product-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="ev" data-title="Gauze Fabric Design Blackout Siyah Karartma Özellikli Fon Perde">
-                <div class="p-4 bg-white flex items-center justify-center border-b border-slate-100 h-64 relative overflow-hidden">
-                    <span class="absolute top-3 left-3 bg-indigo-100 text-indigo-800 text-xs font-bold px-2.5 py-1 rounded-lg z-10 shadow-xs">Ev & Aydınlatma</span>
-                    <img src="https://m.media-amazon.com/images/I/71XAu4XOrjL._AC_SL1500_.jpg" alt="Gauze Fabric Design Blackout Siyah Fon Perde" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <h3 class="font-bold text-slate-900 text-base mb-2 line-clamp-3 group-hover:text-amber-600 transition-colors">Gauze Fabric Design Blackout Siyah Karartma Özellikli Fon Perde 100 x 260</h3>
-                    <p class="text-xs text-slate-500 mb-4 flex-grow">Işığı %100'e yakın kesen, kaliteli kumaştan blackout siyah karartma fon perde.</p>
-                    <a href="https://link.amazon/B08p263s5" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-500 text-white hover:text-slate-950 font-bold py-3 px-4 rounded-xl text-center text-sm transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-md">
-                        <span>Amazon'da İncele</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 16. Philips HomeRun 5000 Serisi Robot Süpürge -->
-            <div class="product-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="elektronik" data-title="Philips HomeRun 5000 Serisi Robot Elektrikli Süpürge Çift Döner Mop">
-                <div class="p-4 bg-white flex items-center justify-center border-b border-slate-100 h-64 relative overflow-hidden">
-                    <span class="absolute top-3 left-3 bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-1 rounded-lg z-10 shadow-xs">Robot Süpürge</span>
-                    <img src="https://m.media-amazon.com/images/I/51JMZuXwstL._AC_SL1080_.jpg" alt="Philips HomeRun 5000 Serisi Robot Süpürge" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <h3 class="font-bold text-slate-900 text-base mb-2 line-clamp-3 group-hover:text-amber-600 transition-colors">Philips HomeRun 5000 Serisi Robot Elektrikli Süpürge, Çift Döner Mop, Süpürme ve Paspas, 10.000Pa Emiş Gücü, Lazer Çizgi Navigasyon, HomeRun Uygulaması, İpek Beji (XU5000/20)</h3>
-                    <p class="text-xs text-slate-500 mb-4 flex-grow">10.000 Pa devasa emiş gücü, çift döner mop ve lazer navigasyonlu amiral gemisi robot süpürge.</p>
-                    <a href="https://link.amazon/B05lYHTTu" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-500 text-white hover:text-slate-950 font-bold py-3 px-4 rounded-xl text-center text-sm transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-md">
-                        <span>Amazon'da İncele</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- 17. Gauze Fabric Bambu Ekru Tül Perde -->
-            <div class="product-card bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col group" data-category="ev" data-title="Gauze Fabric Design Lüks İpeksi Dokulu Bambu Kırışmaz Tül Perde">
-                <div class="p-4 bg-white flex items-center justify-center border-b border-slate-100 h-64 relative overflow-hidden">
-                    <span class="absolute top-3 left-3 bg-indigo-100 text-indigo-800 text-xs font-bold px-2.5 py-1 rounded-lg z-10 shadow-xs">Ev & Aydınlatma</span>
-                    <img src="https://m.media-amazon.com/images/I/81rlLV-e9AL._AC_SL1500_.jpg" alt="Gauze Fabric Bambu Ekru Tül Perde" class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
-                </div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <h3 class="font-bold text-slate-900 text-base mb-2 line-clamp-3 group-hover:text-amber-600 transition-colors">Gauze Fabric Design Lüks İpeksi Dokulu Bambu Kırışmaz Ütü Gerektirmez Ekru 150x260 Normal Pile (1 x 2.5) YÜKSEK KALİTELİ TÜL PERDE</h3>
-                    <p class="text-xs text-slate-500 mb-4 flex-grow">Ütü gerektirmeyen, kırışmaz özel bambu dokulu ekru renkli lüks tül perde.</p>
-                    <a href="https://link.amazon/B0aaVuvXR" target="_blank" rel="noopener noreferrer" class="w-full bg-slate-900 hover:bg-amber-500 text-white hover:text-slate-950 font-bold py-3 px-4 rounded-xl text-center text-sm transition-all duration-300 shadow-sm flex items-center justify-center gap-2 group-hover:shadow-md">
-                        <span>Amazon'da İncele</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 text-slate-400 py-10 border-t border-slate-800 mt-16 text-sm">
-        <div class="max-w-7xl mx-auto px-4 text-center space-y-4">
-            <div class="flex items-center justify-center space-x-2">
-                <div class="w-8 h-8 bg-amber-500 rounded-xl flex items-center justify-center text-slate-950 font-black text-sm">C</div>
-                <span class="text-white font-bold text-lg">Chako Home Store</span>
-            </div>
-            <p class="text-xs text-slate-400 max-w-xl mx-auto leading-relaxed">
-                Chako Home Store bir Amazon Gelir Ortaklığı (Affiliate) platformudur. Sitede yer alan ürün yönlendirmeleri Amazon Türkiye sayfalarına yapılmakta olup, bağlantılar üzerinden yapılan alışverişlerden komisyon elde edilmektedir.
-            </p>
-            <p class="text-xs text-slate-600">&copy; 2026 Chako Home Store. Tüm hakları saklıdır.</p>
-        </div>
-    </footer>
-
-    <!-- Scripts (Arama ve Filtreleme) -->
-    <script>
-        let currentCategory = 'all';
-
-        function filterCategory(category) {
-            currentCategory = category;
-            const buttons = document.querySelectorAll('.cat-btn');
-
-            buttons.forEach(btn => {
-                btn.classList.remove('active', 'bg-amber-500', 'text-slate-900', 'font-semibold');
-                btn.classList.add('bg-slate-100', 'text-slate-700');
-            });
-
-            event.currentTarget.classList.remove('bg-slate-100', 'text-slate-700');
-            event.currentTarget.classList.add('active', 'bg-amber-500', 'text-slate-900', 'font-semibold');
-
-            applyFilters();
-        }
-
-        function searchProducts() {
-            applyFilters();
-        }
-
-        function applyFilters() {
-            const query = document.getElementById('search-input').value.toLowerCase().trim();
-            const cards = document.querySelectorAll('.product-card');
-
-            cards.forEach(card => {
-                const category = card.getAttribute('data-category');
-                const title = card.getAttribute('data-title').toLowerCase();
-                
-                const matchesCategory = (currentCodeCategoryCheck(currentCategory, category));
-                const matchesSearch = (title.includes(query) || query === '');
-
-                if (matchesCategory && matchesSearch) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        function currentCodeCategoryCheck(currentCat, itemCat) {
-            return (currentCat === 'all' || itemCat === currentCat);
-        }
-    </script>
+  <script src="js/app.js" defer></script>
 </body>
 </html>
