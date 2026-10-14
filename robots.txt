@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://chakohomestore.netlify.app/sitemap.xml
+Sitemap: https://chakohome.com.tr/sitemap.xml
