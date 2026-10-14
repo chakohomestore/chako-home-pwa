@@ -19,3 +19,28 @@
   for = "/products.json"
   [headers.values]
     Cache-Control = "no-cache"
+
+# chakohome.xyz adresine gelenleri ana adrese (chakohome.com.tr) kalıcı yönlendir
+[[redirects]]
+  from = "https://chakohome.xyz/*"
+  to = "https://chakohome.com.tr/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://chakohome.xyz/*"
+  to = "https://chakohome.com.tr/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.chakohome.xyz/*"
+  to = "https://chakohome.com.tr/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.chakohome.xyz/*"
+  to = "https://chakohome.com.tr/:splat"
+  status = 301
+  force = true
