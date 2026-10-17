@@ -2,6 +2,63 @@
 (function () {
   'use strict';
 
+
+  // ---- Basit, çerezsiz ziyaret ve tıklama sayacı (kişisel veri tutulmaz) ----
+  var IZLEME_URL = 'https://ctnzfltmdmbiftkafmgs.supabase.co/rest/v1/olaylar';
+  var IZLEME_ANAHTAR = 'sb_publishable_6kolMesBk23Wt3hoka-8sw_LaE97fZH';
+  var IZLENEN_ADRESLER = ['chakohome.com.tr', 'www.chakohome.com.tr'];
+
+  // Kendi cihazınızı saymamak için bir kez ?izleme=kapali ile açın, geri açmak için ?izleme=ac
+  try {
+    var izlemeParam = new URLSearchParams(location.search).get('izleme');
+    if (izlemeParam === 'kapali') localStorage.setItem('chako_izleme_kapali', '1');
+    if (izlemeParam === 'ac') localStorage.removeItem('chako_izleme_kapali');
+  } catch (e) {}
+
+  function izlemeAcikMi() {
+    if (IZLENEN_ADRESLER.indexOf(location.hostname) === -1) return false;
+    if (navigator.webdriver) return false;
+    if (/bot|crawl|spider|slurp|headless|lighthouse|preview/i.test(navigator.userAgent)) return false;
+    try { if (localStorage.getItem('chako_izleme_kapali')) return false; } catch (e) {}
+    return true;
+  }
+
+  function izle(veri) {
+    if (!izlemeAcikMi()) return;
+    veri.cihaz = /Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) ? 'mobil' : 'masaustu';
+    try {
+      fetch(IZLEME_URL, {
+        method: 'POST',
+        keepalive: true,
+        headers: {
+          'Content-Type': 'application/json',
+          'apikey': IZLEME_ANAHTAR,
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify(veri)
+      }).catch(function () {});
+    } catch (e) {}
+  }
+
+  function sayfaGoruntulendi() {
+    var yeni = false;
+    try {
+      if (!sessionStorage.getItem('chako_oturum')) {
+        sessionStorage.setItem('chako_oturum', '1');
+        yeni = true;
+      }
+    } catch (e) {}
+    var kaynak = null;
+    try {
+      if (document.referrer) {
+        var h = new URL(document.referrer).hostname;
+        if (h && IZLENEN_ADRESLER.indexOf(h) === -1) kaynak = h.slice(0, 60);
+      }
+    } catch (e) {}
+    izle({ tip: 'goruntuleme', yeni_oturum: yeni, kaynak: kaynak });
+  }
+  // -----------------------------------------------------------------------
+
   var grid = document.getElementById('grid');
   var chipsBox = document.getElementById('chips');
   var statusEl = document.getElementById('status');
@@ -52,6 +109,9 @@
     a.target = '_blank';
     a.rel = 'sponsored nofollow noopener noreferrer';
     a.setAttribute('aria-label', p.name + ' ürününü Amazon\'da incele');
+    var tikla = function () { izle({ tip: 'tiklama', urun_id: p.id, kategori: p.category }); };
+    a.addEventListener('click', tikla);
+    a.addEventListener('auxclick', tikla);
     a.innerHTML = '<span>Amazon\'da incele</span>' + ARROW;
     info.appendChild(a);
 
@@ -136,6 +196,8 @@
   }
 
   searchEl.addEventListener('input', function () { state.q = searchEl.value; apply(); });
+
+  sayfaGoruntulendi();
 
   fetch('products.json', { cache: 'no-cache' })
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })

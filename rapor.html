@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Chako Home – Rapor</title>
+<style>
+  :root{--cobalt:#1b3a8c;--line:#dde2ea;--muted:#58627a;--bg:#f4f6f8}
+  *{box-sizing:border-box}
+  body{margin:0;font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:#121826}
+  .wrap{max-width:900px;margin:0 auto;padding:20px 14px 60px}
+  h1{font-size:1.5rem;margin:0 0 4px}
+  h2{font-size:1.1rem;margin:0 0 12px}
+  .sub{color:var(--muted);margin:0 0 18px;font-size:.92rem}
+  .box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:16px}
+  .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  input[type=password],input[type=text]{flex:1;min-width:200px;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px}
+  button{font:inherit;font-weight:700;padding:10px 18px;border-radius:10px;border:0;background:var(--cobalt);color:#fff;cursor:pointer}
+  label.k{font-size:.9rem;color:var(--muted)}
+  .msg{margin-top:10px;font-size:.92rem;color:#b3261e}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-bottom:16px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
+  .card h3{margin:0 0 8px;font-size:.95rem;color:var(--muted);font-weight:700}
+  .card .n{display:flex;justify-content:space-between;font-size:.95rem;padding:2px 0}
+  .card .n b{font-size:1.1rem}
+  table{width:100%;border-collapse:collapse;font-size:.92rem}
+  th,td{text-align:left;padding:7px 6px;border-bottom:1px solid var(--line);vertical-align:middle}
+  th{color:var(--muted);font-weight:700;font-size:.82rem}
+  td.sag,th.sag{text-align:right}
+  .bar{height:10px;background:#cfd8ea;border-radius:5px;min-width:2px}
+  .bar.t{background:var(--cobalt)}
+  .scroll{overflow-x:auto}
+  .hidden{display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Chako Home raporu</h1>
+  <p class="sub">Ziyaret ve tıklama sayıları. Kişisel bilgi tutulmaz. Saatler Türkiye saatine göredir.</p>
+
+  <div class="box" id="giris">
+    <div class="row">
+      <input type="password" id="anahtar" placeholder="Rapor anahtarı" autocomplete="off">
+      <button id="goster">Göster</button>
+    </div>
+    <div class="row" style="margin-top:10px"><label class="k"><input type="checkbox" id="hatirla"> Bu cihazda hatırla</label></div>
+    <div class="msg" id="hata"></div>
+  </div>
+
+  <div id="icerik" class="hidden">
+    <div class="cards" id="ozet"></div>
+
+    <div class="box">
+      <h2>Günlük (son 30 gün)</h2>
+      <div class="scroll"><table id="gunluk"></table></div>
+    </div>
+
+    <div class="box">
+      <h2>En çok tıklanan ürünler (son 30 gün)</h2>
+      <div class="scroll"><table id="urunler"></table></div>
+    </div>
+
+    <div class="box">
+      <h2>Kategorilere göre tıklama (son 30 gün)</h2>
+      <div class="scroll"><table id="kategoriler"></table></div>
+    </div>
+
+    <p class="sub">"Ziyaret" bir kişinin tarayıcıyı açtığı oturum sayısıdır (yaklaşık ziyaretçi sayısı). "Sayfa açılışı" yenilemeleri de sayar. Kendi cihazınızı saymamak için sitenin adresinin sonuna bir kez <b>?izleme=kapali</b> ekleyip açın (geri açmak için <b>?izleme=ac</b>).</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  var URL_ = 'https://ctnzfltmdmbiftkafmgs.supabase.co/rest/v1/rpc/rapor';
+  var ANAHTAR = 'sb_publishable_6kolMesBk23Wt3hoka-8sw_LaE97fZH';
+  var $ = function (id) { return document.getElementById(id); };
+  var adlar = {}, kategoriAdlari = {};
+
+  function el(tag, text, cls) { var e = document.createElement(tag); if (text !== undefined) e.textContent = text; if (cls) e.className = cls; return e; }
+  function sayi(n) { return Number(n || 0).toLocaleString('tr-TR'); }
+
+  function satir(tablo, hucreler, baslik) {
+    var tr = el('tr');
+    hucreler.forEach(function (h) {
+      var td = el(baslik ? 'th' : 'td');
+      if (h && h.sag) { td.className = 'sag'; h = h.v; }
+      if (h instanceof Node) td.appendChild(h); else td.textContent = h;
+      tr.appendChild(td);
+    });
+    tablo.appendChild(tr);
+  }
+
+  function bar(deger, enBuyuk, t) {
+    var d = el('div', '', 'bar' + (t ? ' t' : ''));
+    d.style.width = (enBuyuk ? Math.max(2, Math.round(100 * deger / enBuyuk)) : 2) + '%';
+    return d;
+  }
+
+  function topla(liste, alan) { return liste.reduce(function (a, g) { return a + Number(g[alan] || 0); }, 0); }
+
+  function ozetKart(baslik, g) {
+    var c = el('div', '', 'card');
+    c.appendChild(el('h3', baslik));
+    [['Sayfa açılışı', g.goruntuleme], ['Ziyaret', g.oturum], ['Tıklama', g.tiklama]].forEach(function (x) {
+      var r = el('div', '', 'n'); r.appendChild(el('span', x[0])); r.appendChild(el('b', sayi(x[1]))); c.appendChild(r);
+    });
+    return c;
+  }
+
+  function goster(d) {
+    var gunluk = d.gunluk || [];
+    var bugun = d.bugun;
+    var dunD = new Date(bugun + 'T00:00:00'); dunD.setDate(dunD.getDate() - 1);
+    var dun = dunD.toISOString().slice(0, 10);
+    var bul = function (tarih) { return gunluk.filter(function (g) { return g.gun === tarih; })[0] || { goruntuleme: 0, oturum: 0, tiklama: 0 }; };
+    var son7 = gunluk.filter(function (g) { var f = (new Date(bugun) - new Date(g.gun)) / 864e5; return f >= 0 && f < 7; });
+
+    var ozet = $('ozet'); ozet.textContent = '';
+    ozet.appendChild(ozetKart('Bugün', bul(bugun)));
+    ozet.appendChild(ozetKart('Dün', bul(dun)));
+    ozet.appendChild(ozetKart('Son 7 gün', { goruntuleme: topla(son7, 'goruntuleme'), oturum: topla(son7, 'oturum'), tiklama: topla(son7, 'tiklama') }));
+    ozet.appendChild(ozetKart('Son 30 gün', d.toplam || {}));
+
+    var t = $('gunluk'); t.textContent = '';
+    satir(t, ['Gün', { v: 'Açılış', sag: 1 }, { v: 'Ziyaret', sag: 1 }, { v: 'Tıklama', sag: 1 }, ''], true);
+    var enB = Math.max.apply(null, gunluk.map(function (g) { return Number(g.goruntuleme); }).concat([1]));
+    gunluk.slice().reverse().forEach(function (g) {
+      var p = g.gun.split('-');
+      satir(t, [p[2] + '.' + p[1] + '.' + p[0], { v: sayi(g.goruntuleme), sag: 1 }, { v: sayi(g.oturum), sag: 1 }, { v: sayi(g.tiklama), sag: 1 }, bar(Number(g.goruntuleme), enB, true)]);
+    });
+    if (!gunluk.length) satir(t, ['Henüz kayıt yok.']);
+
+    var u = $('urunler'); u.textContent = '';
+    satir(u, ['Ürün', 'Kategori', { v: '30 gün', sag: 1 }, { v: '7 gün', sag: 1 }, ''], true);
+    var urunler = d.urunler || [];
+    var enU = Math.max.apply(null, urunler.map(function (x) { return Number(x.tiklama); }).concat([1]));
+    urunler.forEach(function (x) {
+      satir(u, [adlar[x.urun_id] || x.urun_id, kategoriAdlari[x.kategori] || x.kategori || '-', { v: sayi(x.tiklama), sag: 1 }, { v: sayi(x.son7), sag: 1 }, bar(Number(x.tiklama), enU, true)]);
+    });
+    if (!urunler.length) satir(u, ['Henüz tıklama yok.']);
+
+    var k = $('kategoriler'); k.textContent = '';
+    satir(k, ['Kategori', { v: 'Tıklama', sag: 1 }, ''], true);
+    var kat = d.kategoriler || [];
+    var enK = Math.max.apply(null, kat.map(function (x) { return Number(x.tiklama); }).concat([1]));
+    kat.forEach(function (x) { satir(k, [kategoriAdlari[x.kategori] || x.kategori, { v: sayi(x.tiklama), sag: 1 }, bar(Number(x.tiklama), enK, true)]); });
+    if (!kat.length) satir(k, ['Henüz tıklama yok.']);
+
+    $('icerik').classList.remove('hidden');
+  }
+
+  function getir(anahtar) {
+    $('hata').textContent = '';
+    return fetch(URL_, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'apikey': ANAHTAR },
+      body: JSON.stringify({ p_anahtar: anahtar })
+    }).then(function (r) {
+      if (!r.ok) throw new Error(r.status);
+      return r.json();
+    }).then(function (d) {
+      try { if ($('hatirla').checked) localStorage.setItem('chako_rapor', anahtar); } catch (e) {}
+      goster(d);
+    }).catch(function () {
+      $('icerik').classList.add('hidden');
+      $('hata').textContent = 'Anahtar yanlış ya da bağlantı kurulamadı.';
+      try { localStorage.removeItem('chako_rapor'); } catch (e) {}
+    });
+  }
+
+  fetch('products.json', { cache: 'no-cache' }).then(function (r) { return r.json(); }).then(function (d) {
+    (d.products || []).forEach(function (p) { adlar[p.id] = p.name; });
+    (d.categories || []).forEach(function (c) { kategoriAdlari[c.id] = c.name; });
+  }).catch(function () {}).then(function () {
+    var kayitli = null;
+    try { kayitli = localStorage.getItem('chako_rapor'); } catch (e) {}
+    if (kayitli) { $('hatirla').checked = true; getir(kayitli); }
+  });
+
+  $('goster').addEventListener('click', function () { var a = $('anahtar').value.trim(); if (a) getir(a); });
+  $('anahtar').addEventListener('keydown', function (e) { if (e.key === 'Enter') $('goster').click(); });
+})();
+</script>
+</body>
+</html>
