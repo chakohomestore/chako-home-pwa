@@ -18,7 +18,8 @@
   input[type=password],input[type=text]{flex:1;min-width:200px;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px}
   button{font:inherit;font-weight:700;padding:10px 18px;border-radius:10px;border:0;background:var(--cobalt);color:#fff;cursor:pointer}
   label.k{font-size:.9rem;color:var(--muted)}
-  .msg{margin-top:10px;font-size:.92rem;color:#b3261e}
+  .msg{margin-top:10px;font-size:.92rem;color:#b3261e;word-break:break-word}
+  .msg.durum{color:var(--muted)}
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-bottom:16px}
   .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}
   .card h3{margin:0 0 8px;font-size:.95rem;color:var(--muted);font-weight:700}
@@ -71,6 +72,11 @@
 </div>
 
 <script>
+window.addEventListener('error', function (e) {
+  var h = document.getElementById('hata');
+  if (h) { h.className = 'msg'; h.textContent = 'Sayfa hatası: ' + e.message; }
+});
+
 (function () {
   var URL_ = 'https://ctnzfltmdmbiftkafmgs.supabase.co/rest/v1/rpc/rapor';
   var ANAHTAR = 'sb_publishable_6kolMesBk23Wt3hoka-8sw_LaE97fZH';
@@ -150,22 +156,38 @@
     $('icerik').classList.remove('hidden');
   }
 
+  function durum(metin, hata) {
+    var h = $('hata');
+    h.textContent = metin;
+    h.className = 'msg' + (hata ? '' : ' durum');
+  }
+
   function getir(anahtar) {
-    $('hata').textContent = '';
+    durum('Yükleniyor…', false);
     return fetch(URL_, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'apikey': ANAHTAR },
       body: JSON.stringify({ p_anahtar: anahtar })
     }).then(function (r) {
-      if (!r.ok) throw new Error(r.status);
-      return r.json();
-    }).then(function (d) {
+      return r.text().then(function (t) { return { ok: r.ok, status: r.status, text: t }; });
+    }).then(function (r) {
+      if (!r.ok) {
+        $('icerik').classList.add('hidden');
+        if (r.status === 400 || r.status === 401 || r.status === 403) {
+          durum('Anahtar yanlış görünüyor (kod ' + r.status + '). Boşluk olmadan, birebir yazdığınızdan emin olun.', true);
+          try { localStorage.removeItem('chako_rapor'); } catch (e) {}
+        } else {
+          durum('Sunucu hata verdi (kod ' + r.status + '): ' + r.text.slice(0, 200), true);
+        }
+        return;
+      }
+      var d = JSON.parse(r.text);
       try { if ($('hatirla').checked) localStorage.setItem('chako_rapor', anahtar); } catch (e) {}
+      durum('', false);
       goster(d);
-    }).catch(function () {
+    }).catch(function (e) {
       $('icerik').classList.add('hidden');
-      $('hata').textContent = 'Anahtar yanlış ya da bağlantı kurulamadı.';
-      try { localStorage.removeItem('chako_rapor'); } catch (e) {}
+      durum('Bağlantı kurulamadı veya sayfa hatası: ' + (e && e.message ? e.message : e), true);
     });
   }
 
@@ -178,7 +200,11 @@
     if (kayitli) { $('hatirla').checked = true; getir(kayitli); }
   });
 
-  $('goster').addEventListener('click', function () { var a = $('anahtar').value.trim(); if (a) getir(a); });
+  $('goster').addEventListener('click', function () {
+    var a = $('anahtar').value.trim();
+    if (!a) { durum('Önce rapor anahtarını yazın.', true); return; }
+    getir(a);
+  });
   $('anahtar').addEventListener('keydown', function (e) { if (e.key === 'Enter') $('goster').click(); });
 })();
 </script>
