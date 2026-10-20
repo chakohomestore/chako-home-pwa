@@ -72,10 +72,19 @@ main{flex:1;padding:24px 0 8px}
 .empty p{margin:0 0 14px}
 .empty button{font:inherit;font-weight:700;padding:10px 18px;border-radius:10px;border:1px solid var(--cobalt);background:var(--white);color:var(--cobalt);cursor:pointer}
 
+/* Metin sayfaları (gizlilik vb.) */
+.doc{max-width:760px;padding-top:28px;padding-bottom:12px}
+.doc h2{font-family:var(--font-head);font-size:1.25rem;margin:28px 0 8px}
+.doc p,.doc li{color:#2a3350}
+.doc ul{padding-left:22px}
+.doc a{color:var(--cobalt)}
+.doc .meta{color:var(--muted);font-size:.9rem;margin:0}
+
 /* Alt bilgi */
 footer{margin-top:40px;background:var(--ink);color:#aab3c7;font-size:.88rem;padding:28px 0}
 footer p{margin:0 0 8px;max-width:75ch}
 footer strong{color:var(--white)}
+footer a{color:#fff;text-underline-offset:3px}
 
 @media (max-width:600px){
   .brand img{height:84px}

@@ -1,6 +1,6 @@
 /* Basit service worker: site dosyalarını önbelleğe alır, internet yoksa son halini gösterir.
    Sitede büyük bir değişiklik yaparsanız aşağıdaki sürüm numarasını artırın (v1 -> v2). */
-var CACHE = 'chako-v6';
+var CACHE = 'chako-v7';
 var SHELL = ['/', '/index.html', '/css/styles.css', '/js/app.js', '/products.json', '/manifest.webmanifest', '/icon-192.png'];
 
 self.addEventListener('install', function (e) {
